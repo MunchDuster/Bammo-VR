@@ -38,7 +38,7 @@ public class BeanPlayer : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
 		if (Physics.Raycast(ray, out RaycastHit hit, mouseRayMaxDistance, mouseInteractLayerMask))
 		{
 			Interactable interableItem = hit.transform.gameObject.GetComponent<Interactable>();
