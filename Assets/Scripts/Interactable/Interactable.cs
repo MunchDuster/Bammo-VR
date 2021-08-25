@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
 	public string hoverInfo;
 
@@ -10,12 +10,13 @@ public class Interactable : MonoBehaviour
 	{
 		if (other == null)
 		{
-
+			InteractWithPlayer();
 		}
 		else
 		{
-
+			InteractWithOther();
 		}
 	}
-
+	public abstract void InteractWithOther();
+	public abstract void InteractWithPlayer();
 }

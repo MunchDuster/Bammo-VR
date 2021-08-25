@@ -18,6 +18,6 @@ public class UserInput : InputManager
 	}
 	public void OnInteract(InputValue value)
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		interactPressed = value.isPressed;
 	}
 }

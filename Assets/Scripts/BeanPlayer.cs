@@ -28,7 +28,8 @@ public class BeanPlayer : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-
+		
+		Cursor.visible = false;
 	}
 
 	//var to check if interactable object changed, instead of updating interact ui every frame
@@ -64,11 +65,8 @@ public class BeanPlayer : MonoBehaviour
 		Vector3 rawDirection = new Vector3(input.move.x, 0, input.move.y);
 		Vector3 moveForce = transform.TransformDirection(rawDirection * moveSpeed);
 
-		//Anti slide
-		rb.AddForce(-rb.velocity, ForceMode.VelocityChange);
-
 		//move 
-		rb.AddForce(moveForce * Time.fixedDeltaTime, ForceMode.VelocityChange);
+		rb.AddForce(moveForce - rb.velocity, ForceMode.VelocityChange);
 
 		//LOOKING//
 		Vector3 verticalLookEuler = new Vector3(input.look.y, 0, 0);
