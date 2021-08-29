@@ -12,10 +12,13 @@ public abstract class InputManager : MonoBehaviour
 	[HideInInspector]
 	public bool interactPressed;
 	[HideInInspector]
+	public bool pickupPressed;
+	[HideInInspector]
 	public bool settingsPressed;
 	
 
-	public delegate void ButtonPressed(bool isPressed);
+	public delegate void ButtonPressed();
 	public ButtonPressed OnInteractPressed;
+	public ButtonPressed OnPickupPressed;
 	public ButtonPressed OnSettingsPressed;
 }

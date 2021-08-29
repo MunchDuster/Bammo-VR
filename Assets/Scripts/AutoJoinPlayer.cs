@@ -8,10 +8,6 @@ public class AutoJoinPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		Debug.Log(PlayerInput.Instantiate(playerPrefab,0,null,0, InputSystem.devices[0]));
-	}
-	void OnPlayerJoined(PlayerInput player)
-	{
-		
+		PlayerInput.Instantiate(playerPrefab,0,null,0, InputSystem.devices[0]);
 	}
 }

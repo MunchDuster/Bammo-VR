@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+	public string itemName;
 	public string hoverInfo;
 
 	public bool pickupable;

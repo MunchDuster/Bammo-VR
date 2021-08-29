@@ -9,8 +9,9 @@ public class ShowInteract : MonoBehaviour
 
 	public void HoverInteractable(Interactable interactable)
 	{
+		if(interactable == null) return;
 		textParent.SetActive(true);
-		mainText.text = interactable.name;
+		mainText.text = interactable.itemName;
 		subText.text = interactable.hoverInfo;
 	}
 	public void Hide()

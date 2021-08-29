@@ -19,5 +19,11 @@ public class UserInput : InputManager
 	public void OnInteract(InputValue value)
 	{
 		interactPressed = value.isPressed;
+		OnInteractPressed();
+	}
+	public void OnPickup(InputValue value)
+	{
+		
+		OnPickupPressed();
 	}
 }

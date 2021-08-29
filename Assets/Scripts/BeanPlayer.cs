@@ -4,8 +4,6 @@ using UnityEngine;
 
 /*
 TO DO
-1. Get input manager from drivey car
-
 */
 public class BeanPlayer : MonoBehaviour
 {
@@ -20,58 +18,114 @@ public class BeanPlayer : MonoBehaviour
 
 	[Header("Interaction")]
 	public float mouseRayMaxDistance = 1.5f;
-	public LayerMask mouseInteractLayerMask;
-	public Camera cam;
-	public ShowInteract interactionUI;
 	public Interactable curTool;
+	public Camera cam;
+
+	//private vars to be editted in inspector
+	[SerializeField]
+	private LayerMask mouseInteractLayerMask;
+	[SerializeField]
+	private ShowInteract interactionUI;
+	[SerializeField]
+	private Transform itemParent;
+
+	//private vars
+	private Interactable currentHoverItem;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		
 		Cursor.visible = false;
+
+		//assign functions to delegates
+		input.OnInteractPressed += OnInteractPressed;
+		input.OnPickupPressed += OnPickupPressed;
+	}
+	void OnDestroy()
+	{
+		//remove functions from delegates
+		input.OnInteractPressed -= OnInteractPressed;
+		input.OnPickupPressed -= OnPickupPressed;
 	}
 
+	void OnInteractPressed()
+	{
+		if(currentHoverItem == null) return;
+		currentHoverItem.InteractWith(this, curTool);
+	}
+	void OnPickupPressed()
+	{
+		if(currentHoverItem == null || curTool != null) return;
+		PickUp(currentHoverItem);
+	}
+
+	private Vector3 curEuler;
 	//var to check if interactable object changed, instead of updating interact ui every frame
-	InteractionInfo currentInteractionInfo;
+	private InteractionInfo currentInteractionInfo;
 
 
 	// Update is called once per frame
 	void Update()
 	{
-		Ray ray = Camera.main.ScreenPointToRay(input.mousePosition);
+		Vector3 pos = Camera.main.transform.position;
+		Vector3 dir = Camera.main.transform.forward;
+
+		Ray ray = new Ray(pos,dir);
+		
 		if (Physics.Raycast(ray, out RaycastHit hit, mouseRayMaxDistance, mouseInteractLayerMask))
 		{
+			Debug.DrawRay(pos,dir * hit.distance, Color.red);
 			Interactable interableItem = hit.transform.gameObject.GetComponent<Interactable>();
 
-			if (input.interactPressed)
-			{
-				interableItem.InteractWith(this, curTool);
-			}
-			else
-			{
-				interactionUI.HoverInteractable(interableItem);
-			}
+			currentHoverItem = interableItem;
+
+			interactionUI.HoverInteractable(interableItem);
 		}
 		else
 		{
+			currentHoverItem = null;
+
+			Debug.DrawRay(pos,dir * mouseRayMaxDistance, Color.green);
 			interactionUI.Hide();
 		}
+
+		//LOOKING//
+
+		//rotate head on x-axis (Up and down)
+		float XturnAmount = input.look.y * Time.deltaTime * turnSensitivity;
+		curEuler = Vector3.right * Mathf.Clamp( curEuler.x - XturnAmount, -90f, 90f);
+		head.localRotation = Quaternion.Euler(curEuler);//.Rotate(verticalLookEuler * Time.deltaTime * turnSensitivity);
+
+		//rotate body on y-axis (Sideways)
+		float YturnAmount = input.look.x * Time.deltaTime * turnSensitivity;
+		transform.Rotate(Vector3.up * YturnAmount);
 	}
+	
+	
+	//Pickup an item
+	private void PickUp(Interactable item)
+	{
+		Debug.Log("PICKUP");
+		item.transform.SetParent(itemParent);
+		item.transform.localPosition = Vector3.zero;
+		curTool = item;
+	}
+	
 	//Fixed Update is called once per physics loop
 	void FixedUpdate()
 	{
 		//MOVEMENT//
+
+		//get raw input
 		Vector3 rawDirection = new Vector3(input.move.x, 0, input.move.y);
+
+		//calculate force relactive to player forward
 		Vector3 moveForce = transform.TransformDirection(rawDirection * moveSpeed);
 
-		//move 
-		rb.AddForce(moveForce - rb.velocity, ForceMode.VelocityChange);
+		//remove force from y axis
+		Vector3 applyForce = Vector3.Scale(moveForce - rb.velocity, new Vector3(1,0,1));
 
-		//LOOKING//
-		Vector3 verticalLookEuler = new Vector3(input.look.y, 0, 0);
-		transform.Rotate(verticalLookEuler * Time.fixedDeltaTime);
-		Vector3 sideLookEuler = new Vector3(0, input.look.x, 0);
-		head.Rotate(sideLookEuler * Time.fixedDeltaTime);
+		//Apply to rigidbody
+		rb.AddForce(applyForce, ForceMode.VelocityChange);
 	}
 }
