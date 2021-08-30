@@ -24,8 +24,8 @@ public class BeanPlayer : MonoBehaviour
 	//private vars to be editted in inspector
 	[SerializeField]
 	private LayerMask mouseInteractLayerMask;
-	[SerializeField]
-	private ShowInteract interactionUI;
+	
+	public ShowInteract interactionUI;
 	[SerializeField]
 	private Transform itemParent;
 
@@ -67,25 +67,26 @@ public class BeanPlayer : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		//INTERACTABLE HOVER UPDATE
 		Vector3 pos = Camera.main.transform.position;
 		Vector3 dir = Camera.main.transform.forward;
 
 		Ray ray = new Ray(pos,dir);
-		
 		if (Physics.Raycast(ray, out RaycastHit hit, mouseRayMaxDistance, mouseInteractLayerMask))
 		{
+			//IS LOOKING AT AN INTERACTABLE
 			Debug.DrawRay(pos,dir * hit.distance, Color.red);
+
 			Interactable interableItem = hit.transform.gameObject.GetComponent<Interactable>();
-
 			currentHoverItem = interableItem;
-
 			interactionUI.HoverInteractable(interableItem);
 		}
 		else
 		{
-			currentHoverItem = null;
-
+			//IS NOT LOOKING AT AN INTERACTABLE
 			Debug.DrawRay(pos,dir * mouseRayMaxDistance, Color.green);
+
+			currentHoverItem = null;
 			interactionUI.Hide();
 		}
 

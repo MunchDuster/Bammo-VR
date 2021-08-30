@@ -5,9 +5,13 @@ using UnityEngine;
 public class AutoJoinPlayer : MonoBehaviour
 {
 	public GameObject playerPrefab;
+
+	public ShowInteract interactionUI;
+
     // Start is called before the first frame update
     void Start()
     {
-		PlayerInput.Instantiate(playerPrefab,0,null,0, InputSystem.devices[0]);
+		PlayerInput player = PlayerInput.Instantiate(playerPrefab,0,null,0, InputSystem.devices[0]);
+		player.gameObject.GetComponent<BeanPlayer>().interactionUI = interactionUI;
 	}
 }
