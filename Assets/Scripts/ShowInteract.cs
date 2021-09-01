@@ -3,19 +3,51 @@ using UnityEngine.UI;
 
 public class ShowInteract : MonoBehaviour
 {
-	public GameObject textParent;
-	public Text mainText;
-	public Text subText;
+	[Header("Texts")]
+	public Text itemName;
+	public Text infoText;
 
-	public void HoverInteractable(Interactable interactable)
+	public Text interactText;
+	
+	[Header("Parents")]
+	public GameObject allParent;
+	public GameObject pickupParent;
+	public GameObject placeParent;
+
+	public GameObject interactParent;
+
+	public void ShowHover(Interactable interactable, bool place)
 	{
 		if(interactable == null) return;
-		textParent.SetActive(true);
-		mainText.text = interactable.itemName;
-		subText.text = interactable.hoverInfo;
+
+		allParent.SetActive(true);
+
+		itemName.text = interactable.itemName;
+		infoText.text = interactable.hoverInfo;
+
+		if(!place)
+		{
+			pickupParent.SetActive(true);
+			placeParent.SetActive(false);
+		}
+		else
+		{
+			pickupParent.SetActive(false);
+			placeParent.SetActive(true);
+		}
 	}
-	public void Hide()
+	public void HideHover()
 	{
-		textParent.SetActive(false);
+		pickupParent.SetActive(false);
+			placeParent.SetActive(false);
+	}
+	public void ShowInteraction(string text)
+	{
+		interactText.text = text;
+		interactParent.SetActive(true);
+	}
+	public void HideInteraction()
+	{
+		interactParent.SetActive(false);
 	}
 }

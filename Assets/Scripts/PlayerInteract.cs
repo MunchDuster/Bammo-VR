@@ -5,17 +5,9 @@ using UnityEngine;
 /*
 TO DO
 */
-public class BeanPlayer : MonoBehaviour
+public class PlayerInteract : MonoBehaviour
 {
-	[Header("Main")]
 	public InputManager input;
-	public Rigidbody rb;
-
-	[Header("Movement")]
-	public float moveSpeed = 10;
-	public float turnSensitivity = 3;
-	public Transform head;
-
 	[Header("Interaction")]
 	public float mouseRayMaxDistance = 1.5f;
 	public Interactable curTool;
@@ -35,8 +27,6 @@ public class BeanPlayer : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		Cursor.visible = false;
-
 		//assign functions to delegates
 		input.OnInteractPressed += OnInteractPressed;
 		input.OnPickupPressed += OnPickupPressed;
@@ -55,11 +45,35 @@ public class BeanPlayer : MonoBehaviour
 	}
 	void OnPickupPressed()
 	{
-		if(currentHoverItem == null || curTool != null) return;
-		PickUp(currentHoverItem);
+		if(currentHoverItem == null) return;
+		//if player can place an item then show, if not,check if player can pijk up an item
+		if(curTool != null)
+		{
+			if(canPlace())
+			{
+				Place();
+			}	
+		}
+		else
+		{
+			PickUp(currentHoverItem);
+		}
+		
 	}
+	private bool canPlace()
+	{
+		if(curTool == null) return false;
+		return currentHoverItem.CanHoldItem(curTool);
+	}
+	private void Place()
+	{
+		InteractionInfo info = currentHoverItem.TakeItem(curTool);
+		if(info.type != InteractionType.Success)
+		{
 
-	private Vector3 curEuler;
+		}
+		curTool = null;
+	}
 	//var to check if interactable object changed, instead of updating interact ui every frame
 	private InteractionInfo currentInteractionInfo;
 
@@ -68,41 +82,65 @@ public class BeanPlayer : MonoBehaviour
 	void Update()
 	{
 		//INTERACTABLE HOVER UPDATE
+		
+		Interactable interactable = Raycast();
+		if (interactable != null)
+		{
+			//IS LOOKING AT AN INTERACTABLE
+			HoverItem(interactable);
+		}
+		else
+		{
+			//IS NOT LOOKING AT AN INTERACTABLE
+			NoHover();
+		}
+	}
+	private Interactable Raycast()
+	{
 		Vector3 pos = Camera.main.transform.position;
 		Vector3 dir = Camera.main.transform.forward;
 
 		Ray ray = new Ray(pos,dir);
 		if (Physics.Raycast(ray, out RaycastHit hit, mouseRayMaxDistance, mouseInteractLayerMask))
 		{
-			//IS LOOKING AT AN INTERACTABLE
+			//Object hit
 			Debug.DrawRay(pos,dir * hit.distance, Color.red);
-
-			Interactable interableItem = hit.transform.gameObject.GetComponent<Interactable>();
-			currentHoverItem = interableItem;
-			interactionUI.HoverInteractable(interableItem);
+			return hit.transform.gameObject.GetComponent<Interactable>();
 		}
 		else
 		{
-			//IS NOT LOOKING AT AN INTERACTABLE
+			//No object hit
 			Debug.DrawRay(pos,dir * mouseRayMaxDistance, Color.green);
-
-			currentHoverItem = null;
-			interactionUI.Hide();
+			return null;
 		}
-
-		//LOOKING//
-
-		//rotate head on x-axis (Up and down)
-		float XturnAmount = input.look.y * Time.deltaTime * turnSensitivity;
-		curEuler = Vector3.right * Mathf.Clamp( curEuler.x - XturnAmount, -90f, 90f);
-		head.localRotation = Quaternion.Euler(curEuler);//.Rotate(verticalLookEuler * Time.deltaTime * turnSensitivity);
-
-		//rotate body on y-axis (Sideways)
-		float YturnAmount = input.look.x * Time.deltaTime * turnSensitivity;
-		transform.Rotate(Vector3.up * YturnAmount);
 	}
-	
-	
+	private void HoverItem(Interactable interactable)
+	{
+		currentHoverItem = interactable;
+		interactionUI.ShowHover(interactable, canPlace());
+
+		
+				
+		ShowPossibleInteraction();
+	}
+	private void NoHover()
+	{
+		currentHoverItem = null;
+		interactionUI.HideHover();
+		interactionUI.HideInteraction();
+	}
+	private void ShowPossibleInteraction()
+	{
+		string interactionName = currentHoverItem.WouldInteract(this, curTool);
+		if(interactionName != null)
+		{
+			interactionUI.ShowInteraction(interactionName);
+		}
+		else
+		{
+			interactionUI.HideInteraction();
+		}
+	}
 	//Pickup an item
 	private void PickUp(Interactable item)
 	{
@@ -110,23 +148,5 @@ public class BeanPlayer : MonoBehaviour
 		item.transform.SetParent(itemParent);
 		item.transform.localPosition = Vector3.zero;
 		curTool = item;
-	}
-	
-	//Fixed Update is called once per physics loop
-	void FixedUpdate()
-	{
-		//MOVEMENT//
-
-		//get raw input
-		Vector3 rawDirection = new Vector3(input.move.x, 0, input.move.y);
-
-		//calculate force relactive to player forward
-		Vector3 moveForce = transform.TransformDirection(rawDirection * moveSpeed);
-
-		//remove force from y axis
-		Vector3 applyForce = Vector3.Scale(moveForce - rb.velocity, new Vector3(1,0,1));
-
-		//Apply to rigidbody
-		rb.AddForce(applyForce, ForceMode.VelocityChange);
 	}
 }

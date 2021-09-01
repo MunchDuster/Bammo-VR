@@ -3,13 +3,29 @@ using UnityEngine;
 
 public enum InteractionType
 {
-	Hover,
-	Grab,
-	Mix_Chemicals,
-	Place
+	None,
+	Info,
+	Problem,
+	Success
 }
-public class InteractionInfo : MonoBehaviour
+public class InteractionInfo 
 {
-	Dictionary<string, Interactable> participatingObjects;
-	InteractionType interactionType;
+	public static InteractionInfo None = new InteractionInfo(InteractionType.None, null);
+	public static InteractionInfo Success = new InteractionInfo(InteractionType.Success, null);
+	public InteractionType type;
+	public string message;
+
+	public InteractionInfo(InteractionType _type, string _message)
+	{
+		type = _type;
+		message = _message;
+	}
+	public static InteractionInfo Problem(string _message)
+	{
+		return new InteractionInfo(InteractionType.Problem, _message);
+	}
+	public static InteractionInfo Info(string _message)
+	{
+		return new InteractionInfo(InteractionType.Info, _message);
+	}
 }

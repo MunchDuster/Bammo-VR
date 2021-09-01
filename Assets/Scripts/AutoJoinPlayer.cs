@@ -12,6 +12,6 @@ public class AutoJoinPlayer : MonoBehaviour
     void Start()
     {
 		PlayerInput player = PlayerInput.Instantiate(playerPrefab,0,null,0, InputSystem.devices[0]);
-		player.gameObject.GetComponent<BeanPlayer>().interactionUI = interactionUI;
+		player.gameObject.GetComponent<PlayerInteract>().interactionUI = interactionUI;
 	}
 }
