@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
 		//rotate head on x-axis (Up and down)
 		float XturnAmount = input.look.y * Time.deltaTime * turnSensitivity;
 		curEuler = Vector3.right * Mathf.Clamp( curEuler.x - XturnAmount, -90f, 90f);
-		head.localRotation = Quaternion.Euler(curEuler);//.Rotate(verticalLookEuler * Time.deltaTime * turnSensitivity);
-
+		head.localRotation = Quaternion.Euler(curEuler);
+		
 		//rotate body on y-axis (Sideways)
 		float YturnAmount = input.look.x * Time.deltaTime * turnSensitivity;
 		transform.Rotate(Vector3.up * YturnAmount);

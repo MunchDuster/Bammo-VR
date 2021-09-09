@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3ba500b2977fc1340a85039b38d34d7b, type: 2}
+  - {fileID: 2100000, guid: 392865750ec844e4f9851a08bc5cc05c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   itemName: Test Tube
   hoverInfo: Don't drop it
   pickupable: 1
+  interactsWithPlayer: 0
 --- !u!136 &8902665073273012993
 CapsuleCollider:
   m_ObjectHideFlags: 0

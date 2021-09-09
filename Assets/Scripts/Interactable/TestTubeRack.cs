@@ -17,6 +17,7 @@ public class TestTubeRack : Interactable
 
 	public override InteractionInfo TakeItem(Interactable item)
 	{
+		RefreshPlaces();
 		int index = GetEmptyPlace();
 		
 		if(index != -1)
@@ -83,5 +84,19 @@ public class TestTubeRack : Interactable
 			}
 		}
 		return -1;
+	}
+	private void RefreshPlaces()
+	{
+		for(int i = 0; i < places.Length; i++)
+		{
+			ItemPlace place = places[i];
+			if(place.item != null)
+			{
+				if(place.item.transform.parent != transform)
+				{
+					place.item = null;
+				}
+			}
+		}
 	}
 }
