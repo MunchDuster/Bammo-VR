@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public ShowInteract interactionUI;
+    public PlayerUI interactionUI;
 
 	//private vars
     private InputManager input;

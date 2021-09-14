@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(UserInput))]
 public class PlayerPickup : MonoBehaviour
 {
-    public ShowInteract interactionUI;
+    public PlayerUI interactionUI;
     
     [SerializeField]
 	private Transform itemParent;
@@ -91,8 +91,17 @@ public class PlayerPickup : MonoBehaviour
 	{
 		Debug.Log("PICKUP");
 		item.transform.SetParent(itemParent);
+
 		item.transform.localPosition = Vector3.zero;
+		item.transform.localRotation = Quaternion.identity;
+
 		tool.SetFromPickupable(item);
+		
+		Rigidbody rb = item.GetComponent<Rigidbody>();
+		if(rb != null)
+		{
+			rb.isKinematic = true;
+		}
 	}
     void OnPickupPressed()
 	{
@@ -106,7 +115,7 @@ public class PlayerPickup : MonoBehaviour
 		}
 		else
 		{
-            if(pickupableHover == null) return;
+            if(pickupableHover == null || tool.curTool != null) return;
 			Pickup(pickupableHover);
 		}
 		
@@ -114,19 +123,23 @@ public class PlayerPickup : MonoBehaviour
     
 	private bool canPlace()
 	{
-		if(tool.curTool == null) return false;
-        PlaceInfo info = placeableHover.WouldTake(tool.curTool.gameObject.GetComponent<Pickupable>());
+		if(tool.curTool == null || placeableHover == null ) return false;
+    
+			PlaceInfo info = placeableHover.WouldTake(tool.curTool.gameObject.GetComponent<Pickupable>());
+			
+			if(info.type == PlacementType.Success)
+			{
+				return true;
+			}
+			else if(info.type == PlacementType.Problem)
+			{
+				interactionUI.Problem(info.message);
+				return false;
+			}
+			return false;
+
         
-        if(info.type == PlacementType.Success)
-        {
-            return true;
-        }
-        else if(info.type == PlacementType.Problem)
-        {
-            interactionUI.Problem(info.message);
-            return false;
-        }
-		return false;
+       
 	}
 	private void NoHover()
     {

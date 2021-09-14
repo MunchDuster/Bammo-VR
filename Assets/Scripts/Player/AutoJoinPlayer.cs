@@ -6,7 +6,7 @@ public class AutoJoinPlayer : MonoBehaviour
 {
 	public GameObject playerPrefab;
 
-	public ShowInteract interactionUI;
+	public PlayerUI interactionUI;
 
     // Start is called before the first frame update
     void Start()
