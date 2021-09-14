@@ -207,6 +207,9 @@ GameObject:
   - component: {fileID: 8662865007322166181}
   - component: {fileID: 5028170005375650690}
   - component: {fileID: 4073378100331255771}
+  - component: {fileID: 3055896475740118311}
+  - component: {fileID: 4606020004597150079}
+  - component: {fileID: 9050673419707847926}
   m_Layer: 7
   m_Name: Long Player
   m_TagString: Untagged
@@ -240,14 +243,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4308027455913818456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a96d2eae0b331714183770e5c0a5c6ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 01060b259503d2945923dc68412fdac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 7328394050500693832}
-  rb: {fileID: 5028170005375650690}
-  moveSpeed: 3
-  turnSensitivity: 2
-  head: {fileID: 4405069367875814189}
 --- !u!114 &8842024792935682618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,16 +255,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4308027455913818456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96bfe98421a048c4da9f21d9d485b517, type: 3}
+  m_Script: {fileID: 11500000, guid: 4533f0b5acdc6aa4ca026c779411bf43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 7328394050500693832}
-  mouseRayMaxDistance: 1.5
-  curTool: {fileID: 0}
-  cam: {fileID: 5455642884252654792}
-  mouseInteractLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
   interactionUI: {fileID: 0}
   itemParent: {fileID: 4074609106302412175}
 --- !u!114 &1815715887268769760
@@ -278,11 +269,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4308027455913818456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72dbd704d0910a4aa11088eaaf2a4d9, type: 3}
+  m_Script: {fileID: 11500000, guid: bf4b6b87f1e415c4682b3300eb15d305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 7328394050500693832}
-  animator: {fileID: 8662865007322166181}
+  interactionUI: {fileID: 0}
 --- !u!114 &7328394050500693832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 582a2369a23c6564cafae34cc7bd625b, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 18369fbce0461434eb939c2f048bb3f5, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -343,8 +333,8 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fd92de0c0da86194ebbe097b7c479c80, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -380,6 +370,52 @@ CapsuleCollider:
   m_Height: 1.4160461
   m_Direction: 1
   m_Center: {x: 0, y: 0.69924116, z: 0}
+--- !u!114 &3055896475740118311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308027455913818456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8990c0de31db2f44b39406905ba0141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverObject: {fileID: 0}
+  mouseInteractLayerMask:
+    serializedVersion: 2
+    m_Bits: 119
+  mouseRayMaxDistance: 3
+  cam: {fileID: 5455642884252654792}
+--- !u!114 &4606020004597150079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308027455913818456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff756aa4e8ca24fa3ec9ceab55519e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curTool: {fileID: 0}
+--- !u!114 &9050673419707847926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308027455913818456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dc7f91c5e5cc248a35d11f53d01f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  turnSensitivity: 3
+  head: {fileID: 4405069367875814189}
 --- !u!135 &6547279283965121507
 SphereCollider:
   m_ObjectHideFlags: 0
