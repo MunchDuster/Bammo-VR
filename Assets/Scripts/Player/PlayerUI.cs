@@ -14,7 +14,6 @@ public class PlayerUI : MonoBehaviour
 	[Header("Parents")]
 	public GameObject infoParent;
 	public GameObject pickupParent;
-	public GameObject placeParent;
 	public GameObject interactParent;
     public GameObject problemParent;
     

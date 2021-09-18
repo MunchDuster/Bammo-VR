@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f0ec9f6134a984f8f07f9a40cd50f3, type: 3}
+  m_Name: Cyanide
+  m_EditorClassIdentifier: 
+  state: 0
+  reactions: []
+  charge: -1
+  cation:
+    ion: {fileID: 11400000, guid: 7ae8338c635c0114b9c7637d171cb100, type: 2}
+    number: 1
+  anion:
+    ion: {fileID: 11400000, guid: 154688ed5d5316b4bbd8281983ee8c24, type: 2}
+    number: 1

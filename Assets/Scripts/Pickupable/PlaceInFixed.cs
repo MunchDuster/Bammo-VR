@@ -19,7 +19,6 @@ public class PlaceInFixed : Placeable
     
     private void Start() 
     {
-		Debug.Log("ENGTH" + acceptableItems.Length);
         items = new ItemPlace[places.Length];
         for(int i =0; i < items.Length; i++)
         {
@@ -58,7 +57,6 @@ public class PlaceInFixed : Placeable
 		//add midsection
 		problem += " can only hold ";
 		//add acceptable itms
-		Debug.Log("LENGTH: " + acceptableItems.Length);
 		for(int i = 0; i < acceptableItems.Length; i++)
 		{
 			problem += acceptableItems[i];
@@ -83,12 +81,12 @@ public class PlaceInFixed : Placeable
 	private bool IsAcceptableItem(Interactable item)
 	{
 		string itemName = item.GetType().Name;
-		Debug.Log("LENGTH: " + acceptableItems.Length);
 		foreach(string acceptable in acceptableItems)
 		{
 			Debug.Log("ITEM TYPE NAME: " + itemName + ", COMPARED TO: " + acceptable);
 			if(itemName == acceptable)
 			{
+                Debug.Log("Item is  acceptable");
 				return true;
 			}
 		}
@@ -100,17 +98,19 @@ public class PlaceInFixed : Placeable
     {
         //If item is correct type
         Interactable interactable = item.gameObject.GetComponent<Interactable>();
-        
+        if(interactable == null) return PlaceInfo.Problem("Cannot hold item.");
 		if(IsAcceptableItem(interactable))
 		{
 			//If slot is empty
         	ItemPlace emptySlot = GetEmptySlot();
 			if(emptySlot != null)
 			{
+                Debug.Log("Would take");
 				return PlaceInfo.Success;
 			}
 			else
 			{
+                Debug.Log("NO SPACE");
 				return PlaceInfo.Problem("No space.");
 			}
 		}
@@ -125,26 +125,21 @@ public class PlaceInFixed : Placeable
     {
         return item.CanBePickedUp();
     }
-    public override void Take(Pickupable item)
+    public override void Take(Pickupable item, Vector3 place)
     {
+        Debug.Log("Taking");
         item.transform.SetParent(itemParent);
         
         ItemPlace emptySlot = GetEmptySlot();
         
         emptySlot.item = item;
         
-        item.transform.localPosition = Vector3.zero;
+        item.transform.position = emptySlot.place.position;
         item.transform.localRotation = Quaternion.identity;
     }
-    public override void Give(Pickupable item, Transform newParent)
+    public override void Give(Pickupable item)
     {
-        item.transform.SetParent(newParent);
-        
-        ItemPlace currentSlot = GetEmptySlot();
-        
+        ItemPlace currentSlot = GetItemSlot(item);
         currentSlot.item = null;
-        
-        item.transform.localPosition = Vector3.zero;
-        item.transform.localRotation = Quaternion.identity;
     }
 }

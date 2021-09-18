@@ -17,6 +17,9 @@ public class PlayerInteract : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+        //get ui from current PlayerJoin
+        interactionUI = PlayerJoin.interactionUI;
+        
         //get components from gameobject
         sensor = GetComponent<PlayerSense>();
         input = GetComponent<UserInput>();
@@ -48,11 +51,11 @@ public class PlayerInteract : MonoBehaviour
         else //response.type == InteractionType.None (it isn't meant to interact with player, just tool)
         {
             //check if will interact with current holding item
-            response = interactableHover.WouldInteract(tool.curTool);
+            response = interactableHover.WouldInteract(tool.toolInteractable);
             if(response.type == InteractionType.Success)
             {
                 //yes
-                interactableHover.Interact(tool.curTool);
+                interactableHover.Interact(tool.toolInteractable);
             }
             else if(response.type == InteractionType.Problem)
             {
@@ -119,7 +122,7 @@ public class PlayerInteract : MonoBehaviour
         else //response.type == InteractionType.None (it isn't meant to interact with player, just tool)
         {
             //check if will interact with current holding item
-            response = interactableHover.WouldInteract(tool.curTool);
+            response = interactableHover.WouldInteract(tool.toolInteractable);
             if(response.type == InteractionType.Success)
             {
                 //yes

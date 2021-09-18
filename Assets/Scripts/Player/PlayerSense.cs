@@ -6,6 +6,8 @@ public class PlayerSense : MonoBehaviour
 {
     [HideInInspector]
 	public GameObject hoverObject;
+    [HideInInspector]
+    public Vector3 hoverPoint;
     
     private InputManager input;
 
@@ -23,9 +25,10 @@ public class PlayerSense : MonoBehaviour
     }
     private void Update() 
     {
-        hoverObject = Raycast();
+        Raycast();
+        
     }
-	private GameObject Raycast()
+	private void Raycast()
 	{
 		Vector3 pos = Camera.main.transform.position;
 		Vector3 dir = Camera.main.transform.forward;
@@ -35,13 +38,17 @@ public class PlayerSense : MonoBehaviour
 		{
 			//Object hit
 			Debug.DrawRay(pos,dir * hit.distance, Color.red);
-			return hit.transform.gameObject;
+            
+            hoverPoint = hit.point;
+			hoverObject = hit.transform.gameObject;
 		}
 		else
 		{
 			//No object hit
 			Debug.DrawRay(pos,dir * mouseRayMaxDistance, Color.green);
-			return null;
+            
+            hoverPoint = pos + dir * mouseRayMaxDistance;
+			hoverObject = null;
 		}
 	}
 }
