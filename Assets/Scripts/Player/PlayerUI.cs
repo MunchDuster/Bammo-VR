@@ -22,6 +22,7 @@ public class PlayerUI : MonoBehaviour
 		HideInfo();
 		HidePickupable();
 		HideInteraction();
+		problemParent.SetActive(false);
 	}
 
 	public void ShowInfo(Interactable interactable)

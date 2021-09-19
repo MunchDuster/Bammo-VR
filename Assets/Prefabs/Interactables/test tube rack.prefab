@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6986258615618270202}
   m_Layer: 6
   m_Name: Rack Top
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 8022866997830392519}
   m_Layer: 6
   m_Name: Place3 (1)
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 2455161702695735629}
   m_Layer: 0
   m_Name: Bottom
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2644723656602520764}
   m_Layer: 6
   m_Name: Place4 (1)
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6681353483709972696}
   m_Layer: 6
   m_Name: Rack Bottom
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 135050662802316062}
   m_Layer: 6
   m_Name: Handle.001
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 6065635330124758317}
   m_Layer: 6
   m_Name: Place4
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 6065635330381451259}
   m_Layer: 6
   m_Name: Place2
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 6065635331176575675}
   m_Layer: 6
   m_Name: Place3
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 6065635331883898631}
   m_Layer: 6
   m_Name: Place1
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 2414397997885962622}
   m_Layer: 6
   m_Name: test tube rack
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 7240636014693121653}
   m_Layer: 6
   m_Name: Place2 (1)
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 4276019354935825202}
   m_Layer: 6
   m_Name: Handle
-  m_TagString: Untagged
+  m_TagString: Tray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

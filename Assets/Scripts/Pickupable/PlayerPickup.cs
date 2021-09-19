@@ -36,7 +36,6 @@ public class PlayerPickup : MonoBehaviour
 		//Pickupable HOVER UPDATE
         if(sensor.hoverObject != null)
         {
-           
             if(tool.curTool != null)
             {
                 Placeable placeable = sensor.hoverObject.GetComponent<Placeable>();
@@ -44,18 +43,19 @@ public class PlayerPickup : MonoBehaviour
                 Debug.Log("Has placeable: " + (placeable != null));
                 if (placeable != null)
                 {
-                    //IS LOOKING AT A PLACEABLE
+                    //hover object is placeable and player is holding item
                     placeableHover = placeable;
                     interactionUI.ShowPickupable(true);
                 }
                 else
                 {
-                    //IS NOT LOOKING AT A PLACEABLE
+                    //hover object is not placeable
                     placeableHover = null;
                 }
             }
             else
             {
+				//Cant place if not holding anything
                 placeableHover = null;
             }
             
@@ -64,6 +64,7 @@ public class PlayerPickup : MonoBehaviour
             {
                 //IS LOOKING AT A PICKUPABLE
                 pickupableHover = pickupable;
+
                 //TELL USER IF NOT ALREADY SHOWING PLACEABLE
                 if(placeableHover == null)
                 {
@@ -72,14 +73,20 @@ public class PlayerPickup : MonoBehaviour
             }
             else
             {
-                //IS NOT LOOKING AT A PICKUPABLE
+                //Hover object cdoes not have pickupable
                 pickupableHover = null;
+				
 		    }
             
             
             
             
         }
+		else
+		{
+			//Is not hovering object at all
+			placeableHover = null;
+		}
         
         if(placeableHover == null && pickupableHover == null)
         {
@@ -139,7 +146,9 @@ public class PlayerPickup : MonoBehaviour
 	private bool canPlace()
 	{
 		if(tool.curTool == null || placeableHover == null ) return false;
-    
+
+			Debug.Log("CHECKING IF CAN BE PLACED...");
+			Debug.Log("ASKING " + placeableHover);
 			PlaceInfo info = placeableHover.WouldTake(tool.toolPickupable);
 			
 			if(info.type == PlacementType.Success)
@@ -161,4 +170,4 @@ public class PlayerPickup : MonoBehaviour
 		//remove functions from delegates
 		input.OnPickupPressed -= OnPickupPressed;
 	}
-}
+};

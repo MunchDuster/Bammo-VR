@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7915004258101959542}
   m_Layer: 6
   m_Name: Bottom
-  m_TagString: Untagged
+  m_TagString: TestTube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1421870655099153}
   m_Layer: 6
   m_Name: Test Tube
-  m_TagString: Untagged
+  m_TagString: TestTube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,11 +155,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530555478281136921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85fd085cec2eba418c15b05ba9a5cf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1416cf2392d75e6499ecd69d08044c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Test Tube
-  hoverInfo: Don't drop it
+  hoverInfo: Holds chemicals
+  contentsGameobject: {fileID: 0}
 --- !u!114 &1421870655099153
 MonoBehaviour:
   m_ObjectHideFlags: 0
