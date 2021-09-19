@@ -4,6 +4,8 @@ public class TestTube : Interactable
 {
     [SerializeField]
     private GameObject contentsGameobject;
+	[SerializeField]
+	private GameObject precipitateGameobject;
     
     [HideInInspector]
     public Ion contents
