@@ -1,13 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-[System.Serializable]
-public class Criteria
-{
-    public bool hasBeenMet;
-    public string meetRequirement;
-}
-    
 [RequireComponent(typeof(Animator))]
 public class Door : Interactable
 {
@@ -17,7 +10,7 @@ public class Door : Interactable
     [SerializeField]
     private Renderer canPassLight;
     
-    private Criteria[] criterias = new Criteria[0];
+    public Criteria[] criterias = new Criteria[0];
     private Transform player;
     private Animator animator;
         
@@ -29,14 +22,18 @@ public class Door : Interactable
         {
             if(!criteria.hasBeenMet)
             {
+				Debug.Log("wont open door because: " + criteria.meetRequirement);
+
                 return InteractionInfo.Problem(criteria.meetRequirement);
             }
         }
+		Debug.Log("Opening Door");
         return InteractionInfo.Success;
     }
     public override void Interact(PlayerInteract player)
     {
-        isOpen = !isOpen;
+		isOpen = !isOpen;
+        animator.SetBool("IsOpen",isOpen);
         StartCoroutine(WaitForPlayerToPassThrough());
     }
     
@@ -44,10 +41,24 @@ public class Door : Interactable
     {
         animator = GetComponent<Animator>();
         
-        player = PlayerJoin.current.player.transform;
+        PlayerJoin.OnPlayerJoined += OnPlayerJoined;
+
+		OnPlayerPassThrough += UpdateLight;
+
+		foreach(Criteria criteria in criterias)
+		{
+			criteria.OnCriteriaMet += UpdateLight;
+		}
         UpdateLight();
     }
-    
+    private void OnPlayerJoined(GameObject newplayer)
+	{
+		Debug.Log("Player Set");
+		// set player
+		player = newplayer.transform;
+		// Remove listener
+		PlayerJoin.OnPlayerJoined -= OnPlayerJoined;
+	}
     private IEnumerator WaitForPlayerToPassThrough()
     {
         float thisDot = Vector3.Dot(transform.forward, (player.position - player.position).normalized)
@@ -71,22 +82,21 @@ public class Door : Interactable
         {
             if(!criteria.hasBeenMet)
             {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
     private void UpdateLight()
     {
         bool criteriaMet = checkCriteria();
-        animator.SetBool("IsOpen",criteriaMet);
         if(criteriaMet)
         {
-            canPassLight.material.color = Color.green;
+            canPassLight.material.SetColor("_EmissionColor", Color.green);
         }
         else
         {
-            canPassLight.material.color = Color.red;
+            canPassLight.material.SetColor("_EmissionColor", Color.red);
         }
     }
 }

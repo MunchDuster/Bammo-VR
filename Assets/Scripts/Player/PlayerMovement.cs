@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 	// Start is called before the first frame update
 	private void Start()
 	{
-		Cursor.visible = false;
+		
         
         rb = GetComponent<Rigidbody>();
         input = GetComponent<UserInput>();

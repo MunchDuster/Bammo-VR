@@ -6,24 +6,17 @@ public class Main : MonoBehaviour
 {
     public delegate void UpdateEvent();
     
-    public UpdateEvent OnEarlyUpdate;
     public UpdateEvent OnUpdate;
     public UpdateEvent OnLateUpdate;
     
-    public UpdateEvent OnEarlyFixedUpdate;
     public UpdateEvent OnFixedUpdate;
-    public UpdateEvent OnLateFixedUpdate;
     
     //Start is called before the first frame update
     private void Start() 
     {
-        OnEarlyUpdate += Empty;
         OnUpdate += Empty;
         OnLateUpdate += Empty;
-    
-        OnEarlyFixedUpdate += Empty;
         OnFixedUpdate += Empty;
-        OnLateFixedUpdate += Empty;
     }
     //Empty is used for initializing the delegates
     void Empty() {}
@@ -31,16 +24,18 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnEarlyUpdate();
         OnUpdate();
-        OnLateUpdate();
     }
+
+	// LateUpdate is called after updatte
+	private void LateUpdate() 
+	{
+        OnLateUpdate();
+	}
     
-    //LateUpdate is called once per physics loop
-    private void LateUpdate() 
+    //FixedUpdate is called once per physics loop
+    private void FixedUpdate() 
     {
-        OnEarlyFixedUpdate();
         OnFixedUpdate();
-        OnLateFixedUpdate();    
     }
 }

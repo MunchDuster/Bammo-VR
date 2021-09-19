@@ -21,10 +21,7 @@ public class PlayerPickup : MonoBehaviour
     private Pickupable pickupableHover;
     
     void Start()
-    {
-        //get ui from current PlayerJoin
-        interactionUI = PlayerJoin.interactionUI;
-        
+    {        
         //get components from gameobject
         sensor = GetComponent<PlayerSense>();
         input = GetComponent<UserInput>();
@@ -33,7 +30,7 @@ public class PlayerPickup : MonoBehaviour
 		//assign functions to delegates
 		input.OnPickupPressed += OnPickupPressed;
     }
-    // Update is called once per frame
+    // Called on late update in 
 	void LateUpdate()
 	{
 		//Pickupable HOVER UPDATE
@@ -89,6 +86,8 @@ public class PlayerPickup : MonoBehaviour
             interactionUI.HidePickupable();
         }
 	}
+
+	//Place current tool
     private void Place()
 	{
         Debug.Log("Placing");
@@ -98,6 +97,7 @@ public class PlayerPickup : MonoBehaviour
         tool.SetNull();
 		
 	}
+
     //Pickup an item
 	private void Pickup(Pickupable item)
 	{

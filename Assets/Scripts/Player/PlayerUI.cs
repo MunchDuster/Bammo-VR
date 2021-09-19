@@ -55,7 +55,7 @@ public class PlayerUI : MonoBehaviour
     }
 	public void ShowInteraction(string interactionName)
 	{
-		interactText.text = interactionName;
+		//interactText.text = interactionName;
 		interactParent.SetActive(true);
 	}
 	public void HideInteraction()

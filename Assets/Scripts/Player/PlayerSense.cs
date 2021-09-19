@@ -26,7 +26,7 @@ public class PlayerSense : MonoBehaviour
     private void Update() 
     {
         Raycast();
-        
+        Cursor.visible = false;
     }
 	private void Raycast()
 	{
