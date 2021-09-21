@@ -4,6 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(UserInput))]
 public class PlayerSense : MonoBehaviour
 {
+    public Camera cam;
+    
+    
     [HideInInspector]
 	public GameObject hoverObject;
     [HideInInspector]
@@ -16,8 +19,7 @@ public class PlayerSense : MonoBehaviour
 	private LayerMask mouseInteractLayerMask;
 	[SerializeField]
     private float mouseRayMaxDistance = 1.5f;
-    [SerializeField]
-	private Camera cam;
+	
     
     private void Start() 
     {
@@ -26,7 +28,7 @@ public class PlayerSense : MonoBehaviour
     private void Update() 
     {
         Raycast();
-        Cursor.visible = false;
+        
     }
 	private void Raycast()
 	{

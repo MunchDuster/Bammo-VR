@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 		//LOOKING//
 
 		//rotate head on x-axis (Up and down)
