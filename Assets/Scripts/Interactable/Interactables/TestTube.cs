@@ -8,7 +8,7 @@ public class TestTube : Interactable
 	private GameObject precipitateGameobject;
     
     [HideInInspector]
-    public Ion contents
+    public Chemical contents
     {
         get 
         {
@@ -21,61 +21,73 @@ public class TestTube : Interactable
         }
     }
     
-    private Ion _contents;
+    private Chemical _contents;
     
     
     public override void Interact(Interactable other)
     {
-        switch(other.GetType().Name)
-        {
-            case "TestTube":
-                MixWithChemical(other as TestTube);
-                break;
-            case "ChemicalContainer":
-                TakeChemical(other);
-                break;
-        }
+        MixWithChemical(other as TestTube);
     }
     public override InteractionInfo WouldInteract(Interactable other)
     {
-        if(other  == null) return InteractionInfo.None;
-        
-        Debug.Log("ODER ITEM TYPE " + other.GetType().Name);
-        
-        return InteractionInfo.Success;
+        if(other.GetType().Name == "TestTube")
+        {
+            if(_contents != null)
+            {
+                return InteractionInfo.Success;
+            }
+            else
+            {
+                return InteractionInfo.Problem("Cant mix with nothing.");
+            }
+        }
+        else
+        {
+            return InteractionInfo.Problem("Test tube can only interact with other test tubes and chemicals.");
+        }
     }
     
     
     private void MixWithChemical(TestTube other)
     {
+        
         //Find new mixture created from mixing the contents of this and other test tubes.
-        Ion newIon = contents.mix(other.contents);
+        Chemical newIon = contents.mix(other.contents);
         
         //Now this test tube is empty
         contents = null;
         //Set the new mixture of chemicals to the other test tube
-        other.contents = (newIon != null)? newIon : new SimpleIon();
+        other.contents = (newIon != null)? newIon : new Chemical();
     }
-    private void TakeChemical(Interactable other)
+    private void TakeChemical(ChemicalContainer container)
     {
         //set contents to the contents of the chemicalContainer
-        //contents = other.
+        contents = container.contents;
+        Debug.Log("Taking chemicals");
     }
     private void OnContentsChanged()
     {
         if(_contents != null)
         {
-            //show liguid in test tube if not already
-            if(contentsGameobject.activeSelf)
-            {
-                contentsGameobject.SetActive(true);
-            }
+            //show liquid in test tube
+            contentsGameobject.SetActive(true);
+            
             //update color of contents
-            contentsGameobject.GetComponent<Renderer>().material.color = _contents.color;
+            contentsGameobject.GetComponent<Renderer>().material.color = _contents.contentsColor;
+            
+            //show precipitate if needed
+            Debug.Log("New Contents: " + _contents);
+            precipitateGameobject.SetActive(_contents.hasPrecipitate);
+            contentsGameobject.GetComponent<Renderer>().material.color = _contents.precipitateColor;
         }
         else
         {
-            
+            //hide liguid in test tube if not already
+            if(!contentsGameobject.activeSelf)
+            {
+                contentsGameobject.SetActive(false);
+                precipitateGameobject.SetActive(false);
+            }
         }
     }
     

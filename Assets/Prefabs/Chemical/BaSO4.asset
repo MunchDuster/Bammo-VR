@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b07eb57bf22e3042ba00733fc551cc2, type: 3}
-  m_Name: Sulphate
+  m_Script: {fileID: 11500000, guid: c9e212ca69e73e2468798cf8afd79608, type: 3}
+  m_Name: BaSO4
   m_EditorClassIdentifier: 
-  state: 0
   reactions: []
-  netCharge: -2
-  cation: {fileID: 11400000}
-  anion: {fileID: 0}
-  number: 1
+  symbol: BaSO<sub>4</sub>
+  contentsColor: {r: 0, g: 0, b: 0, a: 1}
+  hasPrecipitate: 1
+  precipitateColor: {r: 1, g: 1, b: 1, a: 1}

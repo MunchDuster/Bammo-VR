@@ -173,7 +173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4592639863148400265}
   - component: {fileID: 7282813135045613091}
-  - component: {fileID: 6853119039057100717}
   - component: {fileID: 6996327844187967715}
   m_Layer: 0
   m_Name: Chemical Container
@@ -208,23 +207,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.041551843
-  m_Height: 0.124735676
+  m_Radius: 0.036687654
+  m_Height: 0.1400652
   m_Direction: 1
-  m_Center: {x: -0.005963931, y: 0.0761593, z: -0.0024842268}
---- !u!65 &6853119039057100717
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3816665667385562163}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06410239, y: 0.018182548, z: 0.074502096}
-  m_Center: {x: 0, y: 0.005585574, z: 0}
+  m_Center: {x: -0.0008609245, y: 0.068494596, z: -0.0008104541}
 --- !u!114 &6996327844187967715
 MonoBehaviour:
   m_ObjectHideFlags: 0

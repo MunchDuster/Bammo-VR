@@ -17,7 +17,6 @@ public class PlayerInteract : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-        
         //get components from gameobject
         sensor = GetComponent<PlayerSense>();
         input = GetComponent<UserInput>();
@@ -33,8 +32,13 @@ public class PlayerInteract : MonoBehaviour
 
 	void OnInteractPressed()
 	{
+        /*
+        Priority Order:
+        1. 
+        */
+        
 		if(interactableHover == null) return;
-		//check if interactable will interact with player
+		//Check if interactable will interact with player
         InteractionInfo response = interactableHover.WouldInteract(this);
         if(response.type == InteractionType.Success)
         {
@@ -50,7 +54,9 @@ public class PlayerInteract : MonoBehaviour
         }
         else //response.type == InteractionType.None (it isn't meant to interact with player, just tool)
         {
-            //check if will interact with current holding item
+            //check if holding an item
+            if(tool.toolInteractable == null) return; 
+            //check if  current holding item will interact with hover
             response = interactableHover.WouldInteract(tool.toolInteractable);
             if(response.type == InteractionType.Success)
             {
@@ -87,7 +93,7 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            //IS NOT LOOKING AT AN INTERACTABLE
+            //IS NOT LOOKING AT ANYTHING
             NoHover();
         }
 	}
@@ -97,7 +103,7 @@ public class PlayerInteract : MonoBehaviour
 		{
             interactableHover = interactable;
 		    interactionUI.ShowInfo(interactable);
-            ShowPossibleInteraction();
+            interactionUI.ShowInteraction();
         }
 	}
 	private void NoHover()
@@ -105,20 +111,6 @@ public class PlayerInteract : MonoBehaviour
 		interactableHover = null;
 		interactionUI.HideInfo();
 		interactionUI.HideInteraction();
-	}
-	private void ShowPossibleInteraction()
-	{
-		InteractionInfo response = interactableHover.WouldInteract(this);
-        if(response.type == InteractionType.Success)
-        {
-            //yes
-            interactionUI.ShowInteraction(response.message);
-        }
-        else if(response.type == InteractionType.Problem)
-        {
-            //no
-            interactionUI.HideInteraction();
-        }
 	}
 	
 }

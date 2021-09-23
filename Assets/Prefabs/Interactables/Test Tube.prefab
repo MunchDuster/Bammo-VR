@@ -163,6 +163,7 @@ MonoBehaviour:
   itemName: Test Tube
   hoverInfo: Holds chemicals
   contentsGameobject: {fileID: 4913503833935245129}
+  precipitateGameobject: {fileID: 1734848222990095386}
 --- !u!114 &1421870655099153
 MonoBehaviour:
   m_ObjectHideFlags: 0

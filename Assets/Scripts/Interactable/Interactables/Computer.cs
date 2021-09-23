@@ -49,8 +49,6 @@ public class Computer : Interactable
         
         OnUserEnter.Invoke();
     }
-    
-    
 	public override InteractionInfo WouldInteract(PlayerInteract player)
     {
         if(currentUser == null)

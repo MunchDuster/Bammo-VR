@@ -39,8 +39,6 @@ public class PlayerPickup : MonoBehaviour
             if(tool.curTool != null)
             {
                 Placeable placeable = sensor.hoverObject.GetComponent<Placeable>();
-                Debug.Log("HOver OBJECT: " + sensor.hoverObject.name);
-                Debug.Log("Has placeable: " + (placeable != null));
                 if (placeable != null)
                 {
                     //hover object is placeable and player is holding item

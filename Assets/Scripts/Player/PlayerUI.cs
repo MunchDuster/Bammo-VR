@@ -54,9 +54,8 @@ public class PlayerUI : MonoBehaviour
     {
         pickupParent.SetActive(false);
     }
-	public void ShowInteraction(string interactionName)
+	public void ShowInteraction()
 	{
-		//interactText.text = interactionName;
 		interactParent.SetActive(true);
 	}
 	public void HideInteraction()

@@ -2,5 +2,24 @@ using UnityEngine;
 
 public class ChemicalContainer : Interactable
 {
-    public Ion contents;
+    public Chemical contents;
+    
+    public override void Interact(Interactable other)
+    {
+        (other as TestTube).contents = contents;
+    }
+    public override InteractionInfo WouldInteract(Interactable other)
+    {
+        if(other == null) return InteractionInfo.None;
+        
+        Debug.Log("PASSED CHECK");
+        if(other.GetType().Name == "TestTube")
+        {
+            return InteractionInfo.Success;
+        }
+        else
+        {
+            return InteractionInfo.Problem("Can only interact with a TestTube");
+        }
+    }
 }
