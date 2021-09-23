@@ -34,6 +34,7 @@ public class PlayerPickup : MonoBehaviour
 	void LateUpdate()
 	{
 		//Pickupable HOVER UPDATE
+        Debug.Log("hovering " + sensor.hoverObject);
         if(sensor.hoverObject != null)
         {
             if(tool.curTool != null)
@@ -73,12 +74,7 @@ public class PlayerPickup : MonoBehaviour
             {
                 //Hover object cdoes not have pickupable
                 pickupableHover = null;
-				
 		    }
-            
-            
-            
-            
         }
 		else
 		{
@@ -95,7 +91,6 @@ public class PlayerPickup : MonoBehaviour
 	//Place current tool
     private void Place()
 	{
-        Debug.Log("Placing");
         Pickupable pickup = tool.toolPickupable;
         
 		placeableHover.Take(pickup, sensor.hoverPoint);
@@ -106,7 +101,6 @@ public class PlayerPickup : MonoBehaviour
     //Pickup an item
 	private void Pickup(Pickupable item)
 	{
-		Debug.Log("PICKUP");
 		item.transform.SetParent(itemParent);
 
 		item.transform.localPosition = Vector3.zero;
@@ -145,20 +139,19 @@ public class PlayerPickup : MonoBehaviour
 	{
 		if(tool.curTool == null || placeableHover == null ) return false;
 
-			Debug.Log("CHECKING IF CAN BE PLACED...");
-			Debug.Log("ASKING " + placeableHover);
-			PlaceInfo info = placeableHover.WouldTake(tool.toolPickupable);
 			
-			if(info.type == PlacementType.Success)
-			{
-				return true;
-			}
-			else if(info.type == PlacementType.Problem)
-			{
-				interactionUI.Problem(info.message);
-				return false;
-			}
+		PlaceInfo info = placeableHover.WouldTake(tool.toolPickupable);
+			
+		if(info.type == PlacementType.Success)
+		{
+			return true;
+		}
+		else if(info.type == PlacementType.Problem)
+		{
+			interactionUI.Problem(info.message);
 			return false;
+		}
+		return false;
 
         
        

@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  turnSensitivity: 7
+  turnSensitivity: 3
   head: {fileID: 4405069367875814189}
 --- !u!114 &3055896475740118311
 MonoBehaviour:

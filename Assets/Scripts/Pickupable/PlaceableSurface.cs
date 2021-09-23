@@ -9,7 +9,6 @@ public class PlaceableSurface : Placeable
     
     public override PlaceInfo WouldTake(Pickupable item)
     {
-        Debug.Log("YES TABLE WOOD TAKE");
         return PlaceInfo.Success;
     }
     public override PlaceInfo WouldGive(Pickupable item)
@@ -19,9 +18,8 @@ public class PlaceableSurface : Placeable
     
     public override void Take(Pickupable item, Vector3 place)
     {
-        Debug.Log("TAKE ITEM");
-        
         item.transform.SetParent(itemParent);
+        
         
         Rigidbody rb = item.GetComponent<Rigidbody>();
 		if(rb != null)
@@ -36,7 +34,7 @@ public class PlaceableSurface : Placeable
     }
     public override void Give(Pickupable item)
     {
-        
+        //Nothing to do.
     }
     
 }
