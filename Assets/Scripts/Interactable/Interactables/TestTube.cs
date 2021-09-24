@@ -6,6 +6,8 @@ public class TestTube : Interactable
     private GameObject contentsGameobject;
 	[SerializeField]
 	private GameObject precipitateGameobject;
+	[SerializeField]
+	private GameObject BubbleGameobject;
     
     [HideInInspector]
     public Chemical contents
@@ -79,6 +81,16 @@ public class TestTube : Interactable
             Debug.Log("New Contents: " + _contents);
             precipitateGameobject.SetActive(_contents.hasPrecipitate);
             contentsGameobject.GetComponent<Renderer>().material.color = _contents.precipitateColor;
+
+			//show bubbles if necessary
+			if(_contents.bubbles)
+			{
+				BubbleGameobject.SetActive(true);
+			}
+			else
+			{
+				BubbleGameobject.SetActive(false);
+			}
         }
         else
         {
@@ -87,6 +99,7 @@ public class TestTube : Interactable
             {
                 contentsGameobject.SetActive(false);
                 precipitateGameobject.SetActive(false);
+				BubbleGameobject.SetActive(false);
             }
         }
     }

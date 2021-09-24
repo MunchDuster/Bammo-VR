@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Events;
 
 [RequireComponent(typeof(PlayerTool))]
 [RequireComponent(typeof(PlayerSense))]
@@ -8,10 +8,15 @@ public class PlayerPickup : MonoBehaviour
 {
     public PlayerUI interactionUI;
     
+	
     [SerializeField]
 	private Transform itemParent;
     
-    
+    public UnityEvent OnPickup;
+	public UnityEvent OnPlace;
+	public UnityEvent OnHoverStart;
+	public UnityEvent OnHoverEnd;
+
     private InputManager input;
     private PlayerSense sensor;
     private PlayerTool tool;
@@ -91,16 +96,18 @@ public class PlayerPickup : MonoBehaviour
 	//Place current tool
     private void Place()
 	{
+		OnPlace.Invoke();
+
         Pickupable pickup = tool.toolPickupable;
         
 		placeableHover.Take(pickup, sensor.hoverPoint);
         tool.SetNull();
-		
 	}
 
     //Pickup an item
 	private void Pickup(Pickupable item)
 	{
+		OnPickup.Invoke();
 		item.transform.SetParent(itemParent);
 
 		item.transform.localPosition = Vector3.zero;

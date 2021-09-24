@@ -7,7 +7,8 @@ using UnityEngine.Events;
 
 public class Options : MonoBehaviour
 {
-	public Slider volumeSlider;
+	public Slider musicVolumeSlider;
+	public Slider fxVolumeSlider;
 	public Slider textSizeSlider;
 	public Slider sensitivitySlider;
 	public Toggle motionBlurToggle;
@@ -15,9 +16,11 @@ public class Options : MonoBehaviour
 	private void Start() 
 	{
 		//Listen for change of value in sliders
-		ListenSlider(volumeSlider, (value) => {GameSettings.current.volume = value;});
+		ListenSlider(musicVolumeSlider, (value) => {GameSettings.current.musicVolume = value;});
+		ListenSlider(fxVolumeSlider, (value) => {GameSettings.current.fxVolume = value;});
 		ListenSlider(textSizeSlider, (value) => {GameSettings.current.textSize = value;});
 		ListenSlider(sensitivitySlider, (value) => {GameSettings.current.sensitivity = value;});
+
 		//Listen for change of value in checkboxes
 		ListenToggle(motionBlurToggle, (value) => {GameSettings.current.motionBlur = value;});
 	}

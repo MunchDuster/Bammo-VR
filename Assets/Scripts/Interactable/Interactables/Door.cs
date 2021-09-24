@@ -1,20 +1,27 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 public class Door : Interactable
 {
     public delegate void OnPlayerPassEvent();
     public OnPlayerPassEvent OnPlayerPassThrough;
-    
-    [SerializeField]
-    private Renderer canPassLight;
-    
-    public Criteria[] criterias = new Criteria[0];
+    public Criteria[] criterias;
+	
+	public UnityEvent OnOpen;
+	public UnityEvent OnClose;
+	public UnityEvent OnLock;
+	public UnityEvent OnUnlock;
+	public UnityEvent OnOpenFail;
+
+
     private Transform player;
-    private Animator animator;
-        
+    private Animator animator;    
     private bool isOpen = false;
+	private bool isLocked = true;
+
+
     
     public override InteractionInfo WouldInteract(PlayerInteract player)
     {
@@ -23,7 +30,7 @@ public class Door : Interactable
             if(!criteria.hasBeenMet)
             {
 				Debug.Log("wont open door because: " + criteria.meetRequirement);
-
+				OnOpenFail.Invoke();
                 return InteractionInfo.Problem(criteria.meetRequirement);
             }
         }
@@ -34,6 +41,16 @@ public class Door : Interactable
     {
 		isOpen = !isOpen;
         animator.SetBool("IsOpen",isOpen);
+
+		if(isOpen)
+		{
+			OnOpen.Invoke();
+		}
+		else
+		{
+			OnClose.Invoke();
+		}
+
         StartCoroutine(WaitForPlayerToPassThrough());
     }
     
@@ -92,11 +109,19 @@ public class Door : Interactable
         bool criteriaMet = checkCriteria();
         if(criteriaMet)
         {
-            canPassLight.material.SetColor("_EmissionColor", Color.green);
+			if(isLocked)
+			{
+				OnUnlock.Invoke();
+				isLocked = false;
+			}
         }
         else
         {
-            canPassLight.material.SetColor("_EmissionColor", Color.red);
+			if(!isLocked)
+			{
+				OnLock.Invoke();
+				isLocked = true;
+			}
         }
     }
 }

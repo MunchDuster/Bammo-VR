@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(PlayerTool))]
 [RequireComponent(typeof(PlayerSense))]
@@ -8,6 +9,7 @@ public class PlayerInteract : MonoBehaviour
 {
     public PlayerUI interactionUI;
 
+	public UnityEvent OnInteractFail;
 	//private vars
     private InputManager input;
     private PlayerSense sensor;
@@ -34,7 +36,8 @@ public class PlayerInteract : MonoBehaviour
 	{
         /*
         Priority Order:
-        1. 
+        1. Interact with player
+		2. Interact with player's tool
         */
         
 		if(interactableHover == null) return;
@@ -50,6 +53,7 @@ public class PlayerInteract : MonoBehaviour
         {
             //no
 			Debug.Log("Interaction would not happen: " + response.message);
+			OnInteractFail.Invoke();
             interactionUI.Problem(response.message);
         }
         else //response.type == InteractionType.None (it isn't meant to interact with player, just tool)
@@ -66,6 +70,7 @@ public class PlayerInteract : MonoBehaviour
             else if(response.type == InteractionType.Problem)
             {
                 //no
+				OnInteractFail.Invoke();
                 interactionUI.Problem(response.message);
             }
         }

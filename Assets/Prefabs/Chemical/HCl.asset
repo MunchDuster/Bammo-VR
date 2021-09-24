@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e212ca69e73e2468798cf8afd79608, type: 3}
   m_Name: HCl
   m_EditorClassIdentifier: 
-  reactions: []
+  reactions:
+  - product: {fileID: 0}
+    reactant: {fileID: 11400000}
+  - product: {fileID: 0}
+    reactant: {fileID: 11400000, guid: 0606114ee1dbb194a837a2e93a3e21b9, type: 2}
   symbol: HCl
   contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   hasPrecipitate: 0

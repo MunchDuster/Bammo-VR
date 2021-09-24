@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Chemical", menuName = "Chemical", order = 1)]
 public class Chemical: ScriptableObject
@@ -30,4 +31,6 @@ public class Chemical: ScriptableObject
     public bool hasPrecipitate;
     
     public Color precipitateColor;
+
+	public bool bubbles;
 }

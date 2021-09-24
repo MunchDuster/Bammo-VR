@@ -12,18 +12,19 @@ public class UserInput : InputManager
 	{
 		look = value.Get<Vector2>();
 	}
-	public void OnEscape(InputValue value)
+	public void OnSettings(InputValue value)
 	{
 		settingsPressed = value.isPressed;
+		if(OnSettingsPressed != null) OnSettingsPressed();
 	}
 	public void OnInteract(InputValue value)
 	{
 		interactPressed = value.isPressed;
-		OnInteractPressed();
+		if(OnInteractPressed != null) OnInteractPressed();
 	}
 	public void OnPickup(InputValue value)
 	{
 		
-		OnPickupPressed();
+		if(OnPickupPressed != null) OnPickupPressed();
 	}
 }
