@@ -1,17 +1,20 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(UserInput))]
 public class PlayerMovement : MonoBehaviour
 {
-	private InputManager input;
-	private Rigidbody rb;
-
 	public float moveSpeed = 10;
 	public float turnSensitivity = 3;
+
 	public Transform head;
 
-	//private vars
+	public UnityEvent OnMoveStart;
+	public UnityEvent OnMoveStop;
+
+	private InputManager input;
+	private Rigidbody rb;
 	private Vector3 curEuler;
 
 	// Start is called before the first frame update
@@ -19,13 +22,25 @@ public class PlayerMovement : MonoBehaviour
 	{
         rb = GetComponent<Rigidbody>();
         input = GetComponent<UserInput>();
+
+		input.OnMovePressed += OnMovePressed;
+	}
+
+	private void OnMovePressed(Vector2 value)
+	{
+		if(value.magnitude < 0.1f)
+		{
+			OnMoveStop.Invoke();
+		}
+		else
+		{
+			OnMoveStart.Invoke();
+		}
 	}
 
 	// Update is called once per frame
 	private void Update()
 	{
-		//LOOKING//
-
 		//rotate head on x-axis (Up and down)
 		float XturnAmount = input.look.y * Time.deltaTime * turnSensitivity;
 		curEuler = Vector3.right * Mathf.Clamp( curEuler.x - XturnAmount, -90f, 90f);
@@ -54,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 		rb.AddForce(applyForce, ForceMode.VelocityChange);
 	}
 
-
+	//Locking and unlocking the mouse
 	private void OnEnable() {
 		Debug.Log("Locking");
         Cursor.visible = false;

@@ -7,6 +7,7 @@ public class UserInput : InputManager
 	public void OnMove(InputValue value)
 	{
 		move = value.Get<Vector2>();
+		if(OnMovePressed != null) OnMovePressed(move);
 	}
 	public void OnLook(InputValue value)
 	{

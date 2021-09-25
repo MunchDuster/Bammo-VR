@@ -24,6 +24,7 @@ public class PlayerPickup : MonoBehaviour
     
     private Placeable placeableHover;
     private Pickupable pickupableHover;
+	private bool colliderWasTrigger;
     
     void Start()
     {        
@@ -121,6 +122,18 @@ public class PlayerPickup : MonoBehaviour
 			rb.isKinematic = true;
             item.GetComponent<Collider>().isTrigger = true;
 		}
+
+		//Make sure the collider does not have collision
+		Collider col = item.GetComponent<Collider>();
+		if(col.isTrigger)
+		{
+			colliderWasTrigger = true;
+		}
+		else
+		{
+			colliderWasTrigger = false;
+			col.isTrigger = true;
+		}
 	}
     void OnPickupPressed()
 	{
@@ -131,6 +144,12 @@ public class PlayerPickup : MonoBehaviour
             {
                 if(canPlace())
                 {
+					//reset the collider
+					if(!colliderWasTrigger)
+					{
+						Collider col = tool.curTool.gameObject.GetComponent<Collider>();
+						col.isTrigger = false;
+					}
                     Place();
                 }	
             }

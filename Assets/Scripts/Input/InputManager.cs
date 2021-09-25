@@ -15,11 +15,13 @@ public abstract class InputManager : MonoBehaviour
 	public bool pickupPressed;
 	[HideInInspector]
 	public bool settingsPressed;
-	[HideInInspector]
 	
 
 	public delegate void ButtonPressed();
 	public ButtonPressed OnInteractPressed;
 	public ButtonPressed OnPickupPressed;
 	public ButtonPressed OnSettingsPressed;
+
+	public delegate void Vector2Pressed(Vector2 value);
+	public Vector2Pressed OnMovePressed;
 }

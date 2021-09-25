@@ -21,6 +21,8 @@ public class AudioControl : MonoBehaviour
 		}
         
     }
+
+	//Once is called when the type of colume matching this is updated
 	private void OnChanged(float value)
 	{
 		source.volume = value;
@@ -36,5 +38,11 @@ public class AudioControl : MonoBehaviour
 		{
 			GameSettings.current.OnFXVolumeChanged -= OnChanged;
 		}
+	}
+
+	// Update is called once per frame
+	private void Update() 
+	{
+		source.pitch = Time.timeScale;
 	}
 }
