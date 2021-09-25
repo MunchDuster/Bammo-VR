@@ -113,7 +113,7 @@ public class PlayerPickup : MonoBehaviour
 
 		item.transform.localPosition = Vector3.zero;
 		item.transform.localRotation = Quaternion.identity;
-
+		
 		tool.SetFromPickupable(item);
 		
 		Rigidbody rb = item.GetComponent<Rigidbody>();
@@ -182,6 +182,7 @@ public class PlayerPickup : MonoBehaviour
         
        
 	}
+	
     void OnDestroy()
 	{
 		//remove functions from delegates

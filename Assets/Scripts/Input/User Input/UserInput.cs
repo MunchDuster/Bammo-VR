@@ -25,7 +25,6 @@ public class UserInput : InputManager
 	}
 	public void OnPickup(InputValue value)
 	{
-		
 		if(OnPickupPressed != null) OnPickupPressed();
 	}
 }

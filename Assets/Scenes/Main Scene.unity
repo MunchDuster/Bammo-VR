@@ -5184,11 +5184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.528
+      value: -0.519
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 1.055
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7857,6 +7857,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 222410703}
+        m_TargetAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10718,6 +10730,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1053541059}
     m_Modifications:
+    - target: {fileID: 4709787214655433875, guid: 8ef2f3e272817cc4086128a3d2b7c8ec, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709787214655433875, guid: 8ef2f3e272817cc4086128a3d2b7c8ec, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5843326336556947452, guid: 8ef2f3e272817cc4086128a3d2b7c8ec, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -14343,7 +14363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -130}
+  m_AnchoredPosition: {x: 0, y: -160}
   m_SizeDelta: {x: 138.294, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476454627
@@ -14414,6 +14434,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1476454625}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1476454629
 MonoBehaviour:
@@ -18140,11 +18172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.778
+      value: -0.7960001
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 1.055
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18195,13 +18227,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 753650295}
     m_Modifications:
+    - target: {fileID: 5591929624405031159, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5591929624405031159, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.018
+      objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.906
+      value: -0.921
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18660,6 +18700,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 753650295}
     m_Modifications:
+    - target: {fileID: 5591929624405031159, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.107
+      objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -18670,7 +18714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.232
+      value: 1.279
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18968,7 +19012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.406
+      value: -0.37400016
       objectReference: {fileID: 0}
     - target: {fileID: 6028013465036508982, guid: b6d94f68dabfbbe47beff5a6d49d6621, type: 3}
       propertyPath: m_LocalPosition.y

@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		//rotate body on y-axis (Sideways)
 		float YturnAmount = input.look.x * Time.deltaTime * turnSensitivity;
-		transform.Rotate(Vector3.up * YturnAmount);
+		transform.Rotate(Vector3.up * YturnAmount, Space.World);
 	}
 	
 	//Fixed Update is called once per physics loop
