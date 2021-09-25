@@ -3487,6 +3487,7 @@ GameObject:
   - component: {fileID: 145953177}
   - component: {fileID: 145953179}
   - component: {fileID: 145953180}
+  - component: {fileID: 145953181}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -3646,6 +3647,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b07780f44d3113341a3cc2c60574cfda, type: 3}
   - {fileID: 8300000, guid: 5e42ec5a340d98d48942d7fa76b8a3e9, type: 3}
   - {fileID: 8300000, guid: fa50637106d8c7740b2974e977aef4b5, type: 3}
+--- !u!114 &145953181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145953176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38919d0e37a128445981296f2bf43c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMusic: 1
 --- !u!1001 &150197488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9532,33 +9546,13 @@ MonoBehaviour:
   OnOpen:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 842704609}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      - {m_Target: {fileID: 842704609}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: SetActive, m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
+    m_CallsDirty: 1
   OnExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 842704609}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      - {m_Target: {fileID: 842704609}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: SetActive, m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
 --- !u!114 &842704612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16421,6 +16415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 914006172}
   playerPrefab: {fileID: 4308027455913818456, guid: 74304444d4288294986c7b397474b5e4, type: 3}
+  settingsPanel: {fileID: 842704609}
   interactionUI: {fileID: 324564762}
   player: {fileID: 0}
 --- !u!1 &1830378448

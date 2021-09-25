@@ -24,8 +24,6 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
 		//LOOKING//
 
 		//rotate head on x-axis (Up and down)
@@ -54,5 +52,17 @@ public class PlayerMovement : MonoBehaviour
 
 		//Apply to rigidbody
 		rb.AddForce(applyForce, ForceMode.VelocityChange);
+	}
+
+
+	private void OnEnable() {
+		Debug.Log("Locking");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+	}
+	private void OnDisable() {
+		Debug.Log("Unlocking");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 	}
 }

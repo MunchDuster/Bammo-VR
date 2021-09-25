@@ -521,7 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6280613039540754321}
   - component: {fileID: 1962912780348354177}
-  - component: {fileID: 6782889227046559234}
+  - component: {fileID: 1609113840855139456}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -639,7 +639,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6782889227046559234
+--- !u!114 &1609113840855139456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,14 +648,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8749781763889076344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48cdc4ed8f658074483cb9f23e08f3bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 38919d0e37a128445981296f2bf43c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  openDoorSound: {fileID: 0}
-  closeDoorSound: {fileID: 0}
-  lockDoorSound: {fileID: 0}
-  unlockDoorSound: {fileID: 0}
+  isMusic: 0
 --- !u!1 &9203637651107501135
 GameObject:
   m_ObjectHideFlags: 0

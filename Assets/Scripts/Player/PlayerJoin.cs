@@ -7,7 +7,7 @@ public class PlayerJoin : MonoBehaviour
 	[SerializeField]
 	private Transform spawnPoint;
 	public GameObject playerPrefab;
-
+	public GameObject settingsPanel;
 	public PlayerUI interactionUI;
 
     [HideInInspector]
@@ -25,7 +25,7 @@ public class PlayerJoin : MonoBehaviour
 		player.transform.position = spawnPoint.position;
 		player.transform.rotation = spawnPoint.rotation;
         
-		player.GetComponent<PlayerSpawn>().Spawn(interactionUI);
+		player.GetComponent<PlayerSpawn>().Spawn(interactionUI, settingsPanel);
         if(OnPlayerJoined != null) OnPlayerJoined(player);
 	}
 }

@@ -24,11 +24,16 @@ public class PlayList : MonoBehaviour
 	}
 	private IEnumerator LoopPlayList()
 	{
-		source.clip = clips[index];
-		source.Play();
-		yield return new WaitForSeconds(source.clip.length);
+		while(true)
+		{
+			source.Stop();
+			source.clip = clips[index];
+			Debug.Log("clip: " + source.clip.length);
+			source.Play();
+			yield return new WaitForSeconds(source.clip.length);
 
-		index++;
-		if(index == clips.Length) index = 0;
+			index++;
+			if(index == clips.Length) index = 0;
+		}
 	}
 }

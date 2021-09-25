@@ -7,9 +7,10 @@ It takes all the references that alll the other scripts on the player will need 
 */
 public class PlayerSpawn : MonoBehaviour
 {
-	public void Spawn(PlayerUI ui)
+	public void Spawn(PlayerUI ui, GameObject settingsPanel)
 	{
 		GetComponent<PlayerPickup>().interactionUI = ui;
 		GetComponent<PlayerInteract>().interactionUI = ui;
+		GetComponent<PlayerMenu>().settingsPanel = settingsPanel;
 	}
 }
