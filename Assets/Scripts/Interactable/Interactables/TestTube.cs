@@ -65,7 +65,6 @@ public class TestTube : Interactable
     {
         //set contents to the contents of the chemicalContainer
         contents = container.contents;
-        Debug.Log("Taking chemicals");
     }
     private void OnContentsChanged()
     {
@@ -79,9 +78,19 @@ public class TestTube : Interactable
             
             //show precipitate if needed
             Debug.Log("New Contents: " + _contents);
-            precipitateGameobject.SetActive(_contents.hasPrecipitate);
-            contentsGameobject.GetComponent<Renderer>().material.color = _contents.precipitateColor;
-
+			if(_contents.hasPrecipitate)
+			{
+				//show precipitate in test tube
+				precipitateGameobject.SetActive(true);
+				//make it the correct color
+            	precipitateGameobject.GetComponent<Renderer>().material.color = _contents.precipitateColor;
+			}
+			else
+			{
+				//hide the precipitate
+				precipitateGameobject.SetActive(false);
+			}
+            
 			//show bubbles if necessary
 			if(_contents.bubbles)
 			{

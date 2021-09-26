@@ -94,4 +94,8 @@ public class GameSettings : MonoBehaviour
 			return _motionBlur;
 		}
 	}
+
+
+	//In game vars, don't need to be saved.
+	public Chemical unknownChemical;
 }

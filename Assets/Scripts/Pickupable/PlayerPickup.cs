@@ -40,7 +40,6 @@ public class PlayerPickup : MonoBehaviour
 	void LateUpdate()
 	{
 		//Pickupable HOVER UPDATE
-        Debug.Log("hovering " + sensor.hoverObject);
         if(sensor.hoverObject != null)
         {
             if(tool.curTool != null)

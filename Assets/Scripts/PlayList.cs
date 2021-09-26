@@ -28,7 +28,6 @@ public class PlayList : MonoBehaviour
 		{
 			source.Stop();
 			source.clip = clips[index];
-			Debug.Log("clip: " + source.clip.length);
 			source.Play();
 			yield return new WaitForSeconds(source.clip.length);
 

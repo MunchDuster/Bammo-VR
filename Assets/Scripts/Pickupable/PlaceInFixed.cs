@@ -31,12 +31,10 @@ public class PlaceInFixed : Placeable
         	ItemPlace emptySlot = GetEmptySlot();
 			if(emptySlot != null)
 			{
-                Debug.Log("Would take");
 				return PlaceInfo.Success;
 			}
 			else
 			{
-                Debug.Log("NO SPACE");
 				return PlaceInfo.Problem("No space.");
 			}
 		}
@@ -51,7 +49,6 @@ public class PlaceInFixed : Placeable
     }
     public override void Take(Pickupable item, Vector3 place)
     {
-        Debug.Log("Taking");
         item.transform.SetParent(itemParent);
         
         ItemPlace emptySlot = GetEmptySlot();
@@ -133,10 +130,8 @@ public class PlaceInFixed : Placeable
 	{
 		foreach(string acceptable in acceptableItems)
 		{
-			Debug.Log("ITEM TYPE NAME: " + itemTag + ", COMPARED TO: " + acceptable);
 			if(itemTag == acceptable)
 			{
-                Debug.Log("Item is  acceptable");
 				return true;
 			}
 		}

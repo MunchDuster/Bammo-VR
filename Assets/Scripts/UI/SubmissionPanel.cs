@@ -5,7 +5,6 @@ using TMPro;
 public class SubmissionPanel : MonoBehaviour
 {
     [SerializeField]
-    private string[] correctAnswers;
     
     public TMP_InputField inputField; 
     public UnityEvent OnCorrectSubmission;
@@ -13,7 +12,7 @@ public class SubmissionPanel : MonoBehaviour
     
     public void ShowSubmitPanel() 
     {
-        if(CheckResults())
+        if(inputField.text == GameSettings.current.unknownChemical.symbol)
         {
             OnCorrectSubmission.Invoke();
         }
@@ -21,18 +20,5 @@ public class SubmissionPanel : MonoBehaviour
         {
             OnWrongSubmission.Invoke();
         }
-    }
-    
-    private bool CheckResults()
-    {
-        foreach(string answer in correctAnswers)
-        {
-            Debug.Log(inputField.text + " compared to " + answer);
-            if(inputField.text == answer)
-            {
-                return true;
-            }
-        }
-        return false;
     }
 }

@@ -18,6 +18,7 @@ public class PlaceableSurface : Placeable
     
     public override void Take(Pickupable item, Vector3 place)
     {
+		Vector3 eulers = item.transform.rotation.eulerAngles;
         item.transform.SetParent(itemParent);
         
         
@@ -28,7 +29,7 @@ public class PlaceableSurface : Placeable
             item.GetComponent<Collider>().isTrigger = false;
 		}
         
-        item.transform.rotation = GetPlacedRotation(item.transform.position);
+        item.transform.rotation = Quaternion.Euler(0, eulers.y, 0);
 		item.transform.position = place + item.bottom.localPosition + Vector3.up * 0.05f;
             
     }
@@ -45,7 +46,6 @@ public class PlaceableSurface : Placeable
 		float cosAngle = Vector3.Dot(Vector3.Scale(offset, new Vector3(1,0,1)), Vector3.Scale(forward, new Vector3(1,0,1)) );
 
 		float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
-		Debug.Log(angle);
 
 		return Quaternion.Euler(0, angle, 0);
 	}

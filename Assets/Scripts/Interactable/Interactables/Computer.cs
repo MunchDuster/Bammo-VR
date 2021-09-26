@@ -18,9 +18,10 @@ public class Computer : Interactable
     private Quaternion originalRotation;
     private Transform playerCamera;
     private PlayerMovement movement;
+
+
     public override void Interact(PlayerInteract player)
     {
-        Debug.Log("Computer interacting with player.");
         currentUser = player;
         
         //Move the player camera to the correct spot
@@ -94,7 +95,6 @@ public class Computer : Interactable
     
     public void Submit()
     {
-        Debug.Log("Submitted");
         OnSubmit.Invoke();
     }
     

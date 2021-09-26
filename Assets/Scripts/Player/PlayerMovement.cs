@@ -71,12 +71,10 @@ public class PlayerMovement : MonoBehaviour
 
 	//Locking and unlocking the mouse
 	private void OnEnable() {
-		Debug.Log("Locking");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 	}
 	private void OnDisable() {
-		Debug.Log("Unlocking");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 	}

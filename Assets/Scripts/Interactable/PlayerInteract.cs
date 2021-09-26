@@ -46,13 +46,11 @@ public class PlayerInteract : MonoBehaviour
         if(response.type == InteractionType.Success)
         {
             //yes
-			Debug.Log("Interaction would happen");
             interactableHover.Interact(this);
         }
         else if(response.type == InteractionType.Problem)
         {
             //no
-			Debug.Log("Interaction would not happen: " + response.message);
 			OnInteractFail.Invoke();
             interactionUI.Problem(response.message);
         }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9e212ca69e73e2468798cf8afd79608, type: 3}
-  m_Name: OH + HCl
+  m_Name: Cl
   m_EditorClassIdentifier: 
   reactions: []
-  symbol: OH + HCl
-  contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+  symbol: 
+  contentsColor: {r: 0, g: 0, b: 0, a: 0}
   hasPrecipitate: 0
-  precipitateColor: {r: 1, g: 1, b: 1, a: 0.36862746}
+  precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0
