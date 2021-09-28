@@ -8,7 +8,7 @@ public class GameSettings : MonoBehaviour
 
 	private void Awake() 
 	{
-		if(current == null)
+		if(current == null || true)
 		{
 			//set this component as the current
 			current = this;

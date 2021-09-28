@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class RedLitmus : Interactable
 {
-    public Chemical[] blueifiers;
     public GameObject particlePrefab;
     
     public override void Interact(Interactable other)
@@ -13,7 +12,7 @@ public class RedLitmus : Interactable
         Instantiate(particlePrefab, transform.position, transform.rotation);
         
         //Chagne color accordingly
-        if(System.Array.Exists(blueifiers, chemical => chemical == testube.contents))
+        if(testube.contents.makesLitmusBlue)
         {
             GetComponent<Renderer>().material.color = Color.blue;
         }

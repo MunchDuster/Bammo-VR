@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e212ca69e73e2468798cf8afd79608, type: 3}
   m_Name: Cl
   m_EditorClassIdentifier: 
-  reactions: []
+  reactions:
+  - product: {fileID: 0}
+    reactant: {fileID: 11400000, guid: cbf1ff5186f5fd64da60cbd346330310, type: 2}
   symbol: 
   contentsColor: {r: 0, g: 0, b: 0, a: 0}
   hasPrecipitate: 0
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0
+  makesLitmusBlue: 0

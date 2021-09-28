@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9e212ca69e73e2468798cf8afd79608, type: 3}
-  m_Name: BaSO4
+  m_Name: Cl + AgNO3
   m_EditorClassIdentifier: 
   reactions: []
-  symbol: BaSO<sub>4</sub>
-  contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
+  symbol: Cl + AgNO<sub>3</sub>
+  contentsColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   hasPrecipitate: 1
-  precipitateColor: {r: 1, g: 1, b: 1, a: 1}
+  precipitateColor: {r: 1, g: 1, b: 1, a: 0.7490196}
   bubbles: 0
   makesLitmusBlue: 0

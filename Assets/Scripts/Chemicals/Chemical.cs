@@ -33,4 +33,6 @@ public class Chemical: ScriptableObject
     public Color precipitateColor;
 
 	public bool bubbles;
+    
+    public bool makesLitmusBlue;
 }

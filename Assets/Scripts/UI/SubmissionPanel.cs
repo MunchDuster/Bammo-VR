@@ -12,7 +12,9 @@ public class SubmissionPanel : MonoBehaviour
     
     public void ShowSubmitPanel() 
     {
-        if(inputField.text == GameSettings.current.unknownChemical.symbol)
+        string answer = GameSettings.current.unknownChemical.symbol;
+        Debug.Log("Unknown chemical is " + answer);
+        if(inputField.text == answer)
         {
             OnCorrectSubmission.Invoke();
         }
