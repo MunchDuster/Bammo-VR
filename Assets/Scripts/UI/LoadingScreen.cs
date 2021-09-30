@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScreen : MonoBehaviour
 {
-    
     [SerializeField]
 	private Slider loadingSlider;
 	[SerializeField]

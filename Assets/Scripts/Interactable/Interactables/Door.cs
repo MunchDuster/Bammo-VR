@@ -34,7 +34,6 @@ public class Door : Interactable
                 return InteractionInfo.Problem(criteria.meetRequirement);
             }
         }
-		Debug.Log("Opening Door");
         return InteractionInfo.Success;
     }
     public override void Interact(PlayerInteract player)
@@ -70,7 +69,6 @@ public class Door : Interactable
     }
     private void OnPlayerJoined(GameObject newplayer)
 	{
-		Debug.Log("Player Set");
 		// set player
 		player = newplayer.transform;
 		// Remove listener

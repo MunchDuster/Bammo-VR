@@ -12,8 +12,6 @@ public class SafetyGoggles : Interactable
 
     public override void Interact(PlayerInteract player)
     {
-        Debug.Log("Putting on glasses...");
-
 		//Get the player's head transform
 		Transform head = player.gameObject.GetComponent<PlayerMovement>().head;
 

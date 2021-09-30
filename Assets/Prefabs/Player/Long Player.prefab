@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dc7f91c5e5cc248a35d11f53d01f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 3.5
   turnSensitivity: 4
   head: {fileID: 4405069367875814189}
   OnMoveStart:
@@ -759,7 +759,7 @@ MonoBehaviour:
   mouseInteractLayerMask:
     serializedVersion: 2
     m_Bits: 119
-  mouseRayMaxDistance: 1.3
+  mouseRayMaxDistance: 1.5
 --- !u!114 &8842024792935682618
 MonoBehaviour:
   m_ObjectHideFlags: 0

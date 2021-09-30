@@ -80,8 +80,10 @@ public class PlayerInteract : MonoBehaviour
 	{
 		//INTERACTABLE HOVER UPDATE
 		GameObject hoverObject = sensor.hoverObject;
+       
         if(hoverObject != null)
         {
+            Debug.Log("hover: " + hoverObject + ", contains interactable: " + (hoverObject.GetComponent<Interactable>()));
             Interactable interactable = hoverObject.GetComponent<Interactable>();
             if (interactable != null)
             {
