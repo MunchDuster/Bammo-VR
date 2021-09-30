@@ -44,9 +44,6 @@ public class Computer : Interactable
         movement = player.gameObject.GetComponent<PlayerMovement>();
         movement.enabled = false;
         
-        //Unlock the player cursor
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
         
         OnUserEnter.Invoke();
     }
@@ -76,8 +73,8 @@ public class Computer : Interactable
         
         
         //put camera back
-        playerCamera.position = originalPosition;
-        playerCamera.rotation = originalRotation;
+        playerCamera.localPosition = Vector3.zero;
+        playerCamera.localRotation = Quaternion.identity;
         
         //Let FollowTransform take control of camera
         if(followTransform != null)

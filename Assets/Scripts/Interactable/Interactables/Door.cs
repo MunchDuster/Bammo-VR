@@ -7,8 +7,6 @@ public class Door : Interactable
 {
     [SerializeField]
     private int indicatorMaterialIndex;
-    [SerializeField]
-    private Material indecatorMaterial;
     
     public delegate void OnPlayerPassEvent();
     public OnPlayerPassEvent OnPlayerPassThrough;
@@ -135,13 +133,8 @@ public class Door : Interactable
     }
     private void SetIndicator(Color color)
     {
-        /*
-        Material[] mats = renderer.materials;
-                
-        mats[indicatorMaterialIndex].color = color;
         
-        renderer.materials = mats;
-        */
-        indecatorMaterial.color = color;
+        Material[] mats = renderer.materials;
+        mats[indicatorMaterialIndex].color = color;
     }
 }

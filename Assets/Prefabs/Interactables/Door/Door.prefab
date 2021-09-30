@@ -378,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Door
   hoverInfo: Lets you move between rooms.
-  indicatorMaterialIndex: 0
+  indicatorMaterialIndex: 5
   indecatorMaterial: {fileID: 2100000, guid: 66d8610d0535b354386cce16e902af72, type: 2}
   criterias:
   - {fileID: 0}

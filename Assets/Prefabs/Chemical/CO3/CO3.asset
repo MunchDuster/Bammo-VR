@@ -16,8 +16,8 @@ MonoBehaviour:
   - product: {fileID: 11400000, guid: 3be8242378c07c04c88949c6ae2849e5, type: 2}
     reactant: {fileID: 11400000, guid: 8a6bdbc54029ab84db53c03067f81b24, type: 2}
   symbol: CO<sub>3</sub><sup>2-</sup>
-  contentsColor: {r: 0, g: 0, b: 0, a: 1}
-  hasPrecipitate: 1
-  precipitateColor: {r: 1, g: 1, b: 1, a: 1}
+  contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
+  hasPrecipitate: 0
+  precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0
   makesLitmusBlue: 1

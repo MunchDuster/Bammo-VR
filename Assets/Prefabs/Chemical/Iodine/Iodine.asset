@@ -15,8 +15,8 @@ MonoBehaviour:
   reactions:
   - product: {fileID: 0}
     reactant: {fileID: 0}
-  symbol: 
-  contentsColor: {r: 0, g: 0, b: 0, a: 0}
+  symbol: I<sup>-</sup>
+  contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
   hasPrecipitate: 0
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0

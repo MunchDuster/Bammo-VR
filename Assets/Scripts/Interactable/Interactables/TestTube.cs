@@ -57,9 +57,9 @@ public class TestTube : Interactable
         Chemical newIon = contents.mix(other.contents);
         
         //Now this test tube is empty
-        contents = null;
+        other.contents = null;
         //Set the new mixture of chemicals to the other test tube
-        other.contents = (newIon != null)? newIon : new Chemical();
+        contents = (newIon != null)? newIon : new Chemical();
     }
     private void TakeChemical(ChemicalContainer container)
     {
@@ -104,12 +104,9 @@ public class TestTube : Interactable
         else
         {
             //hide liguid in test tube if not already
-            if(!contentsGameobject.activeSelf)
-            {
-                contentsGameobject.SetActive(false);
-                precipitateGameobject.SetActive(false);
-				BubbleGameobject.SetActive(false);
-            }
+            contentsGameobject.SetActive(false);
+            precipitateGameobject.SetActive(false);
+			BubbleGameobject.SetActive(false);
         }
     }
     

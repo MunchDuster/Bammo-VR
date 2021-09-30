@@ -13,5 +13,6 @@ public class UnknownChemicalControl : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         GetComponent<ChemicalContainer>().contents = GameSettings.current.unknownChemical;
+		Debug.Log("Mystrey s " + GameSettings.current.unknownChemical);
     }
 }

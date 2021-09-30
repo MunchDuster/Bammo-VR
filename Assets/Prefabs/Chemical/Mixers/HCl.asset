@@ -18,6 +18,8 @@ MonoBehaviour:
   - product: {fileID: 0}
     reactant: {fileID: 11400000, guid: 0606114ee1dbb194a837a2e93a3e21b9, type: 2}
   symbol: HCl
-  contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+  contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
   hasPrecipitate: 0
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
+  bubbles: 0
+  makesLitmusBlue: 0
