@@ -8336,20 +8336,7 @@ MonoBehaviour:
   itemName: Safety Goggles
   hoverInfo: Must be warn in lab.
   headOffset: {fileID: 576347178}
-  criteriaMetWhenWearing: {fileID: 836586531}
---- !u!114 &836586531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148916580686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8cf073dc62ac034abcc3f2fd4ee692a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meetRequirement: Must be wearing safety goggles
+  criteriaMetWhenWearing: {fileID: 648139537812449355}
 --- !u!65 &836586532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17005,6 +16992,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a25332d0221572048abd54431f174264, type: 3}
   m_PrefabInstance: {fileID: 66258610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &648139537812449354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8601918628236520947, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
+  m_PrefabInstance: {fileID: 9195928308681278905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &648139537812449355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648139537812449354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf073dc62ac034abcc3f2fd4ee692a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meetRequirement: Must be wearing safety goggles
 --- !u!1001 &783321096855266816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17131,6 +17136,10 @@ PrefabInstance:
     - target: {fileID: 7451300918953819907, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: criterias.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451300918953819907, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
+      propertyPath: indicatorMaterialIndex
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7451300918953819907, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: criterias.Array.data[0]
@@ -17703,6 +17712,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ef2f3e272817cc4086128a3d2b7c8ec, type: 3}
+--- !u!1 &7419764264636037085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8601918628236520947, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
+  m_PrefabInstance: {fileID: 1267881095859198510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7419764264636037086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7419764264636037085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf073dc62ac034abcc3f2fd4ee692a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meetRequirement: Must remove lab safety equipment.
 --- !u!4 &7831529614913495502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5596081975788295536, guid: 9afb248f963ef3540a3f4fe1bd93ece4, type: 3}
@@ -17720,6 +17747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 30293513}
     m_Modifications:
+    - target: {fileID: 253833414147152305, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002
+      objectReference: {fileID: 0}
     - target: {fileID: 6981406016704731381, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -17765,13 +17796,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451300918953819907, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
-      propertyPath: criterias.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451300918953819907, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: criterias.Array.data[0]
       value: 
-      objectReference: {fileID: 836586531}
+      objectReference: {fileID: 648139537812449355}
     - target: {fileID: 7757801535622709839, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_Name
       value: Lab Door

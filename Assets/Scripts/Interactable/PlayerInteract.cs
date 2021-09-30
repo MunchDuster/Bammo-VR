@@ -83,7 +83,6 @@ public class PlayerInteract : MonoBehaviour
        
         if(hoverObject != null)
         {
-            Debug.Log("hover: " + hoverObject + ", contains interactable: " + (hoverObject.GetComponent<Interactable>()));
             Interactable interactable = hoverObject.GetComponent<Interactable>();
             if (interactable != null)
             {

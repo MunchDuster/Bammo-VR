@@ -323,7 +323,7 @@ MeshRenderer:
   - {fileID: 557716328756821181, guid: 8589cf885ef2c8a4da4db90643a50d27, type: 3}
   - {fileID: -4794689604861793093, guid: 8589cf885ef2c8a4da4db90643a50d27, type: 3}
   - {fileID: -7098565394360792512, guid: 8589cf885ef2c8a4da4db90643a50d27, type: 3}
-  - {fileID: 2273656918121791937, guid: 8589cf885ef2c8a4da4db90643a50d27, type: 3}
+  - {fileID: 2100000, guid: 66d8610d0535b354386cce16e902af72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -378,7 +378,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Door
   hoverInfo: Lets you move between rooms.
-  criterias: []
+  indicatorMaterialIndex: 0
+  indecatorMaterial: {fileID: 2100000, guid: 66d8610d0535b354386cce16e902af72, type: 2}
+  criterias:
+  - {fileID: 0}
   OnOpen:
     m_PersistentCalls:
       m_Calls:

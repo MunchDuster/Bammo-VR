@@ -5,6 +5,11 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class Door : Interactable
 {
+    [SerializeField]
+    private int indicatorMaterialIndex;
+    [SerializeField]
+    private Material indecatorMaterial;
+    
     public delegate void OnPlayerPassEvent();
     public OnPlayerPassEvent OnPlayerPassThrough;
     public Criteria[] criterias;
@@ -18,6 +23,7 @@ public class Door : Interactable
 
     private Transform player;
     private Animator animator;    
+    private Renderer renderer;
     private bool isOpen = false;
 	private bool isLocked = true;
 
@@ -56,6 +62,7 @@ public class Door : Interactable
     private void Start() 
     {
         animator = GetComponent<Animator>();
+        renderer = GetComponent<Renderer>();
         
         PlayerJoin.OnPlayerJoined += OnPlayerJoined;
 
@@ -111,6 +118,8 @@ public class Door : Interactable
 			{
 				OnUnlock.Invoke();
 				isLocked = false;
+                
+                SetIndicator(Color.green);
 			}
         }
         else
@@ -119,7 +128,20 @@ public class Door : Interactable
 			{
 				OnLock.Invoke();
 				isLocked = true;
+                
+                SetIndicator(Color.red);
 			}
         }
+    }
+    private void SetIndicator(Color color)
+    {
+        /*
+        Material[] mats = renderer.materials;
+                
+        mats[indicatorMaterialIndex].color = color;
+        
+        renderer.materials = mats;
+        */
+        indecatorMaterial.color = color;
     }
 }
