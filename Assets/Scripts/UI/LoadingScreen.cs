@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-
 public class LoadingScreen : MonoBehaviour
 {
     [SerializeField]
@@ -31,6 +30,7 @@ public class LoadingScreen : MonoBehaviour
 			float progress = Mathf.Clamp01(operation.progress / 0.9f);
 			loadingSlider.value = progress;
 			loadingText.text = ((int)(progress * 100)).ToString() + "%";
+			Time.timeScale = 1;
 			yield return null;
 		}
 	}

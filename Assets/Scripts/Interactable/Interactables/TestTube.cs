@@ -52,14 +52,18 @@ public class TestTube : Interactable
     
     private void MixWithChemical(TestTube other)
     {
-        
-        //Find new mixture created from mixing the contents of this and other test tubes.
+        //Mix these contents with other contents
         Chemical newIon = contents.mix(other.contents);
+        if(newIon == null)
+        {
+            //mix other contents with these contents
+            newIon = other.contents.mix(contents);
+        }
         
         //Now this test tube is empty
         other.contents = null;
         //Set the new mixture of chemicals to the other test tube
-        contents = (newIon != null)? newIon : new Chemical();
+        contents = newIon;
     }
     private void TakeChemical(ChemicalContainer container)
     {

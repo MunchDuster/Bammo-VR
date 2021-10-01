@@ -15,8 +15,8 @@ MonoBehaviour:
   reactions:
   - product: {fileID: 11400000, guid: 69241f9fdf861854b8484dd98b90ccbb, type: 2}
     reactant: {fileID: 11400000, guid: cbf1ff5186f5fd64da60cbd346330310, type: 2}
-  - product: {fileID: 11400000, guid: 9eeff4b0df23998449e9b0d973029640, type: 2}
-    reactant: {fileID: 11400000, guid: 325848ad8e4bc3a4b89f73e339f11c59, type: 2}
+  - product: {fileID: 11400000, guid: 52eafdeefe47dcc4e867c5e70edc0ae6, type: 2}
+    reactant: {fileID: 11400000, guid: f4027e98b34388345b858fa3962d3c38, type: 2}
   symbol: Ag(NH<sub>3</sub>)<sub>2</sub>
   contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
   hasPrecipitate: 0
