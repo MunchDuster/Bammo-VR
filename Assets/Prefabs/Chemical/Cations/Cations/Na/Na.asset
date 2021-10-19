@@ -15,8 +15,8 @@ MonoBehaviour:
   reactions:
   - product: {fileID: 11400000, guid: 92ab90036e476ea4cb63479298a4dbf7, type: 2}
     reactant: {fileID: 11400000, guid: e91dff02a19720f478670a4266bc6d08, type: 2}
-  symbol: 
-  contentsColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  symbol: Na<sup>+</sup>
+  contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   hasPrecipitate: 0
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0

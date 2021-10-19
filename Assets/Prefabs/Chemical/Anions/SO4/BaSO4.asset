@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions: []
   symbol: BaSO<sub>4</sub>
-  contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
+  contentsColor: {r: 0, g: 0, b: 0, a: 1}
   hasPrecipitate: 1
   precipitateColor: {r: 1, g: 1, b: 1, a: 1}
   bubbles: 0

@@ -15,8 +15,8 @@ MonoBehaviour:
   reactions:
   - product: {fileID: 11400000, guid: 03d64d71dcc63024ab9fc9d401899572, type: 2}
     reactant: {fileID: 11400000, guid: e91dff02a19720f478670a4266bc6d08, type: 2}
-  symbol: 
-  contentsColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  symbol: Fe<sup>2+</sup>
+  contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   hasPrecipitate: 0
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0

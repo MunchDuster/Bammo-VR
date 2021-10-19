@@ -16,7 +16,7 @@ MonoBehaviour:
   - product: {fileID: 11400000, guid: a86f57d9e838f2441ab1e1684da7dcb8, type: 2}
     reactant: {fileID: 11400000, guid: 325848ad8e4bc3a4b89f73e339f11c59, type: 2}
   symbol: 
-  contentsColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  contentsColor: {r: 0, g: 0, b: 0, a: 0.2509804}
   hasPrecipitate: 1
   precipitateColor: {r: 0.7264151, g: 0.3436799, b: 0.119927004, a: 1}
   bubbles: 0

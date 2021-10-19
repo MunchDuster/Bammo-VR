@@ -16,7 +16,7 @@ MonoBehaviour:
   - product: {fileID: 11400000, guid: 9eeff4b0df23998449e9b0d973029640, type: 2}
     reactant: {fileID: 11400000, guid: 325848ad8e4bc3a4b89f73e339f11c59, type: 2}
   symbol: AgCl
-  contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
+  contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   hasPrecipitate: 1
   precipitateColor: {r: 1, g: 1, b: 1, a: 1}
   bubbles: 0

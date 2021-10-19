@@ -16,7 +16,7 @@ MonoBehaviour:
   - product: {fileID: 11400000, guid: 44c893fdbcfbcbe4b8f0a393ee4c6ee4, type: 2}
     reactant: {fileID: 11400000, guid: 8a6bdbc54029ab84db53c03067f81b24, type: 2}
   symbol: OH<sup>-</sup>
-  contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
+  contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   hasPrecipitate: 0
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0

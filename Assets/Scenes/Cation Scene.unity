@@ -1282,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: contents
       value: 
-      objectReference: {fileID: 11400000, guid: 8a6bdbc54029ab84db53c03067f81b24, type: 2}
+      objectReference: {fileID: 11400000, guid: 48f5203d33fc7ab42afbccee96959c74, type: 2}
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: itemName
       value: Potassium thiocyanate
@@ -2899,7 +2899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.11649959
+      value: -0.1378
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2907,7 +2907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14060865
+      value: -0.1406
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3125,7 +3125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: itemName
-      value: Unkown anion
+      value: Unkown cation
       objectReference: {fileID: 0}
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: hoverInfo
@@ -3845,7 +3845,7 @@ RectTransform:
   m_Father: {fileID: 1752660137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.3333333}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 0, y: 10}
@@ -7710,11 +7710,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleChoices:
-  - {fileID: 11400000, guid: 7b0e55f218a3e4349867ce90eac71d92, type: 2}
-  - {fileID: 11400000, guid: 0606114ee1dbb194a837a2e93a3e21b9, type: 2}
-  - {fileID: 11400000, guid: ad8da4f91dfb72a41951ab9fdfb2b53d, type: 2}
-  - {fileID: 11400000, guid: 30cc5bd904b4caa4e86d923dd5e1e68f, type: 2}
-  - {fileID: 11400000, guid: 247728e35cb1ce7419a0d59ef891b783, type: 2}
+  - {fileID: 11400000, guid: 72624bf084fafef4a9c150a071f065a6, type: 2}
+  - {fileID: 11400000, guid: b9d55e2ab7d7d8248aa93212e764e029, type: 2}
+  - {fileID: 11400000, guid: c70b9e013b01ecf48b63481a26735cad, type: 2}
+  - {fileID: 11400000, guid: d9534151daa5e8f4a8a3eb4f6343ea99, type: 2}
+  - {fileID: 11400000, guid: a2676acf247ebd14f996f6605174762e, type: 2}
+  - {fileID: 11400000, guid: 624ef03b887b4c945b881517bcd05e91, type: 2}
+  - {fileID: 11400000, guid: f5409089add7e7c48a4cbc4e782969f3, type: 2}
+  - {fileID: 11400000, guid: d58c69548aa636c479bd2edfa5e2170e, type: 2}
+  - {fileID: 11400000, guid: 55cf49113f0d0384099be1c7398fe8a1, type: 2}
 --- !u!1 &988081156
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,7 +7736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &988081157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7891,10 +7895,10 @@ PrefabInstance:
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: contents
       value: 
-      objectReference: {fileID: 11400000, guid: cbf1ff5186f5fd64da60cbd346330310, type: 2}
+      objectReference: {fileID: 11400000, guid: e91dff02a19720f478670a4266bc6d08, type: 2}
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: itemName
-      value: Silver Nitrate
+      value: Sodium Nitrate
       objectReference: {fileID: 0}
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: hoverInfo
@@ -8265,8 +8269,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348070538}
   m_HandleRect: {fileID: 348070537}
   m_Direction: 2
-  m_Value: 1.0000004
-  m_Size: 0.6666667
+  m_Value: 1
+  m_Size: 0.49999997
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9489,6 +9493,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1340579120}
+  - component: {fileID: 1340579122}
+  - component: {fileID: 1340579121}
   m_Layer: 0
   m_Name: Content
   m_TagString: Untagged
@@ -9515,8 +9521,46 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 400}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1340579121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340579119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0.2901961}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1340579122
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340579119}
+  m_CullTransparentMesh: 1
 --- !u!1 &1359436816
 GameObject:
   m_ObjectHideFlags: 0
@@ -9829,10 +9873,10 @@ PrefabInstance:
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: contents
       value: 
-      objectReference: {fileID: 11400000, guid: f4027e98b34388345b858fa3962d3c38, type: 2}
+      objectReference: {fileID: 11400000, guid: a08c657290e12974389f463703ccd2a8, type: 2}
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: itemName
-      value: Barium Nitrate
+      value: Bisulphate
       objectReference: {fileID: 0}
     - target: {fileID: 6996327844187967715, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: hoverInfo
@@ -14546,7 +14590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6981406016704731381, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710784
+      value: -0.70710576
       objectReference: {fileID: 0}
     - target: {fileID: 6981406016704731381, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -14554,7 +14598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6981406016704731381, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70710576
+      value: -0.7071079
       objectReference: {fileID: 0}
     - target: {fileID: 6981406016704731381, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_LocalRotation.z
@@ -14566,7 +14610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6981406016704731381, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: 6981406016704731381, guid: 39eabfcd28d2dc34fbbf90d074753dd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
