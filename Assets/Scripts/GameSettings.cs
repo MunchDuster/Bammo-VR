@@ -8,7 +8,7 @@ public class GameSettings : MonoBehaviour
 	public static GameSettings current;
 	private void Awake()
 	{
-		if (current == null || true)
+		if (current == null)
 		{
 			//try load saved settings
 			//set this component as the current
@@ -120,4 +120,5 @@ public class GameSettings : MonoBehaviour
 
 	//In game vars, don't need to be saved.
 	public Chemical unknownChemical;
+	public int currentLevel;
 }

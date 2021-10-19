@@ -217,10 +217,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadingScreen, Assembly-CSharp
-        m_MethodName: OpenScene
-        m_Mode: 5
+      - m_Target: {fileID: 7797510905542065988}
+        m_TargetAssemblyTypeName: Lesson, Assembly-CSharp
+        m_MethodName: SetLesson
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -243,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockedCover: {fileID: 8960586088810538979}
   lessonNameText: {fileID: 4066607989246850834}
+  button: {fileID: 4066607989462469701}
   lessonName: 
   lessonNumber: 0
 --- !u!1 &4066607989464748282

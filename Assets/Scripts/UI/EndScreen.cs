@@ -1,19 +1,22 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class EndScreen : MonoBehaviour
 {
-    public TextMeshProUGUI text;
-    public void UpdateText()
-    {
-        float time = Time.time;
-        
-        text.text = "Time taken: " + (time) + "s.";
-    }
-    public void BackToMainMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
+	public TextMeshProUGUI text;
+	private void Awake()
+	{
+		{
+			float time = Time.time;
+
+			text.text = "Time taken: " + (time) + "s.";
+
+			//Update level no if need be
+			if (GameSettings.current.currentLevel == GameSettings.current.levelNo)
+			{
+				GameSettings.current.levelNo++;
+				Debug.Log(GameSettings.current.levelNo);
+			}
+		}
+	}
 }
