@@ -113,6 +113,12 @@ public class PlayerInteract : MonoBehaviour
 				return;
 			}
 
+			if (tool.toolInteractable == null)
+			{
+				NoHover();
+				return;
+			}
+
 			interactionInfo = interactable.WouldInteract(tool.toolInteractable);
 
 			if (interactionInfo.type != InteractionType.None)

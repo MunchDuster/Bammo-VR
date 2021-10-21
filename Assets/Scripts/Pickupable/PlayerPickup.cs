@@ -91,7 +91,7 @@ public class PlayerPickup : MonoBehaviour
 	//Pickup the hover item
 	private void Pickup(Pickupable item)
 	{
-		OnPickup.Invoke();
+		if (OnPickup != null) OnPickup.Invoke();
 		item.transform.SetParent(itemParent);
 
 		item.transform.localPosition = Vector3.zero;

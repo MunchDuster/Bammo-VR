@@ -3,7 +3,9 @@ using UnityEngine;
 public class Gloves : Interactable
 {
 	[SerializeField]
-	private Transform handOffset;
+	private Transform lefthandOffset;
+	[SerializeField]
+	private Transform righthandOffset;
 	[SerializeField]
 	private Criteria criteriaMetWhenWearing;
 	[SerializeField]
@@ -26,8 +28,8 @@ public class Gloves : Interactable
 
 
 		//Set offset and stuff
-		leftglove.localPosition = handOffset.localPosition;
-		leftglove.localRotation = handOffset.localRotation;
+		leftglove.localPosition = lefthandOffset.localPosition;
+		leftglove.localRotation = lefthandOffset.localRotation;
 
 		//////RIGHT HAND///////
 		/////Get the player's head transform
@@ -41,8 +43,8 @@ public class Gloves : Interactable
 
 
 		//Set offset and stuff
-		rightglove.localPosition = handOffset.localPosition;
-		rightglove.localRotation = handOffset.localRotation;
+		rightglove.localPosition = righthandOffset.localPosition;
+		rightglove.localRotation = righthandOffset.localRotation;
 
 		//Set criteria met
 		criteriaMetWhenWearing.hasBeenMet = true;

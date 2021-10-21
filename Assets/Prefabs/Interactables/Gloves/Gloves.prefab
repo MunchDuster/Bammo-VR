@@ -95,6 +95,7 @@ Transform:
   - {fileID: 5336422523886306391}
   - {fileID: 8437099190116248201}
   - {fileID: 7680762300806606974}
+  - {fileID: 8880331798847687532}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,7 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Safety gloves
   hoverInfo: Protects ur and from chemical injury.
-  handOffset: {fileID: 7680762300806606974}
+  lefthandOffset: {fileID: 7680762300806606974}
+  righthandOffset: {fileID: 8880331798847687532}
   criteriaMetWhenWearing: {fileID: 858109167564412319}
   leftglove: {fileID: 5336422523886306391}
   rightglove: {fileID: 8437099190116248201}
@@ -1710,6 +1712,36 @@ Transform:
   m_Father: {fileID: 7821032575818143849}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8029003523133196543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8880331798847687532}
+  m_Layer: 0
+  m_Name: RightHandOffsetOnPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8880331798847687532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029003523133196543}
+  m_LocalRotation: {x: 0.74933153, y: -0.18232071, z: -0.5896969, w: 0.23983134}
+  m_LocalPosition: {x: -0.007, y: 0.302, z: -0.213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1750331082593301711}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 8.302, y: -101.039, z: -145.807}
 --- !u!1 &8057824983860727741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7680762300806606974}
   m_Layer: 0
-  m_Name: HandOffsetOnPLayer
+  m_Name: LeftHandOffsetOnPLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
