@@ -6,8 +6,8 @@ public class Criteria : MonoBehaviour
 	public Event OnCriteriaMet;
 
 	private bool _hasBeenMet = false;
-    public bool hasBeenMet
-	{ 
+	public bool hasBeenMet
+	{
 		get
 		{
 			return _hasBeenMet;
@@ -18,9 +18,6 @@ public class Criteria : MonoBehaviour
 			OnCriteriaMet();
 		}
 	}
-	
-    public string meetRequirement;
 
-	
-	
+	public string meetRequirement;
 }

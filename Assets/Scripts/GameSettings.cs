@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameSettings : MonoBehaviour
@@ -116,7 +114,6 @@ public class GameSettings : MonoBehaviour
 			return _levelNo;
 		}
 	}
-
 
 	//In game vars, don't need to be saved.
 	public Chemical unknownChemical;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SafetyGoggles : Interactable
@@ -10,8 +8,8 @@ public class SafetyGoggles : Interactable
 	private Criteria criteriaMetWhenWearing;
 
 
-    public override void Interact(PlayerInteract player)
-    {
+	public override void Interact(PlayerInteract player)
+	{
 		//Get the player's head transform
 		Transform head = player.gameObject.GetComponent<PlayerMovement>().head;
 
@@ -29,10 +27,10 @@ public class SafetyGoggles : Interactable
 		//Set criteria met
 		criteriaMetWhenWearing.hasBeenMet = true;
 
-	
-    }
+
+	}
 	public override InteractionInfo WouldInteract(PlayerInteract player)
-    {
-        return InteractionInfo.Success;
-    }
+	{
+		return InteractionInfo.Success("put on goggles");
+	}
 }

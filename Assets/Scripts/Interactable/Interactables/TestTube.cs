@@ -2,13 +2,6 @@ using UnityEngine;
 
 public class TestTube : Interactable
 {
-	[SerializeField]
-	private GameObject contentsGameobject;
-	[SerializeField]
-	private GameObject precipitateGameobject;
-	[SerializeField]
-	private GameObject BubbleGameobject;
-
 	[HideInInspector]
 	public Chemical contents
 	{
@@ -23,6 +16,13 @@ public class TestTube : Interactable
 		}
 	}
 
+	[SerializeField]
+	private GameObject contentsGameobject;
+	[SerializeField]
+	private GameObject precipitateGameobject;
+	[SerializeField]
+	private GameObject BubbleGameobject;
+
 	private Chemical _contents;
 
 
@@ -36,7 +36,7 @@ public class TestTube : Interactable
 		{
 			if (_contents != null)
 			{
-				return InteractionInfo.Success;
+				return InteractionInfo.Success("mix");
 			}
 			else
 			{
@@ -48,7 +48,6 @@ public class TestTube : Interactable
 			return InteractionInfo.Problem("Test tube can only interact with other test tubes and chemicals.");
 		}
 	}
-
 
 	private void MixWithChemical(TestTube other)
 	{
@@ -115,5 +114,4 @@ public class TestTube : Interactable
 			BubbleGameobject.SetActive(false);
 		}
 	}
-
 }

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: b4da114dae1015f4ba56e888ac91e74a, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5f41d0e4d3197dd44a18a4ab6c421b2f, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 324747f246d604843aa9950891bd6cf2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1229,7 +1229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.12716849
+      value: 0.1272
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1237,7 +1237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14160839
+      value: -0.1301
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2899,7 +2899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1378
+      value: -0.138
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2907,7 +2907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1406
+      value: -0.133
       objectReference: {fileID: 0}
     - target: {fileID: 4592639863148400265, guid: 10d75e6a4570a5b41b78fa047e48f4b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3447,9 +3447,9 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 10
+    m_FontSize: 26
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 40
     m_Alignment: 4
@@ -3652,7 +3652,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 61
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 5
@@ -3804,6 +3804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51df6d78f418104cb2d3de006eda773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupKey: E
+  interactKey: Q
+  padding: 20
   itemName: {fileID: 38178587}
   infoText: {fileID: 242983564}
   interactText: {fileID: 1690386254}
@@ -4379,6 +4382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9542cc419339642933a87dadb729c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverName: 
   itemParent: {fileID: 438425493}
 --- !u!1 &461529885
 GameObject:
@@ -7683,6 +7687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unknownChemical: {fileID: 0}
+  currentLevel: 0
 --- !u!4 &983689806
 Transform:
   m_ObjectHideFlags: 0
@@ -7736,7 +7741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &988081157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11715,9 +11720,9 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 10
+    m_FontSize: 26
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 40
     m_Alignment: 4
@@ -12253,6 +12258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9542cc419339642933a87dadb729c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverName: 
   itemParent: {fileID: 5211796587034612297}
 --- !u!1001 &1850887697
 PrefabInstance:

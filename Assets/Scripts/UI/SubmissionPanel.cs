@@ -4,8 +4,6 @@ using TMPro;
 
 public class SubmissionPanel : MonoBehaviour
 {
-    [SerializeField]
-    
     public TMP_InputField inputField; 
     public UnityEvent OnCorrectSubmission;
     public UnityEvent OnWrongSubmission; 

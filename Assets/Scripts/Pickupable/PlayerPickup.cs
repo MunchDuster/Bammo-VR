@@ -6,105 +6,89 @@ using UnityEngine.Events;
 [RequireComponent(typeof(UserInput))]
 public class PlayerPickup : MonoBehaviour
 {
-    public PlayerUI interactionUI;
-    
-	
-    [SerializeField]
-	private Transform itemParent;
-    
-    public UnityEvent OnPickup;
+	public PlayerUI interactionUI;
+
+	public UnityEvent OnPickup;
 	public UnityEvent OnPlace;
 	public UnityEvent OnHoverStart;
 	public UnityEvent OnHoverEnd;
 
-    private InputManager input;
-    private PlayerSense sensor;
-    private PlayerTool tool;
-    
-    
-    private Placeable placeableHover;
-    private Pickupable pickupableHover;
+	private InputManager input;
+	private PlayerSense sensor;
+	private PlayerTool tool;
+
+	[SerializeField]
+	private Transform itemParent;
+
+	private Placeable placeableHover;
+	private Pickupable pickupableHover;
 	private bool colliderWasTrigger;
-    
-    void Start()
-    {        
-        //get components from gameobject
-        sensor = GetComponent<PlayerSense>();
-        input = GetComponent<UserInput>();
-        tool = GetComponent<PlayerTool>();
-        
+
+	private void Start()
+	{
+		//get components from gameobject
+		sensor = GetComponent<PlayerSense>();
+		input = GetComponent<UserInput>();
+		tool = GetComponent<PlayerTool>();
+
 		//assign functions to delegates
 		input.OnPickupPressed += OnPickupPressed;
-    }
-    // Called on late update in 
-	void LateUpdate()
-	{
-		//Pickupable HOVER UPDATE
-        if(sensor.hoverObject != null)
-        {
-            if(tool.curTool != null)
-            {
-                Placeable placeable = sensor.hoverObject.GetComponent<Placeable>();
-                if (placeable != null)
-                {
-                    //hover object is placeable and player is holding item
-                    placeableHover = placeable;
-                    interactionUI.ShowPickupable(true);
-                }
-                else
-                {
-                    //hover object is not placeable
-                    placeableHover = null;
-                }
-            }
-            else
-            {
-				//Cant place if not holding anything
-                placeableHover = null;
-            }
-            
-            Pickupable pickupable = sensor.hoverObject.GetComponent<Pickupable>();
-            if (pickupable != null)
-            {
-                //IS LOOKING AT A PICKUPABLE
-                pickupableHover = pickupable;
-
-                //TELL USER IF NOT ALREADY SHOWING PLACEABLE
-                if(placeableHover == null)
-                {
-                    interactionUI.ShowPickupable(false);
-                }
-            }
-            else
-            {
-                //Hover object cdoes not have pickupable
-                pickupableHover = null;
-		    }
-        }
-		else
-		{
-			//Is not hovering object at all
-			placeableHover = null;
-		}
-        
-        if(placeableHover == null && pickupableHover == null)
-        {
-            interactionUI.HidePickupable();
-        }
 	}
+	// Called on late update in 
+	private void LateUpdate()
+	{
+		/**
+		1. Check if hovering over placeable
+		2. Check if hovering over pickupable
+		*/
+		if (sensor.hoverObject == null)
+		{
+			interactionUI.HidePickupable();
+			return;
+		}
 
+		//FIRST CHECK IF HOVERING OVER PLACEABLE
+		placeableHover = sensor.hoverObject.GetComponent<Placeable>();
+		if (tool.curTool != null && placeableHover != null)
+		{
+			//hover object is placeable and player is holding item
+			PlaceInfo placeInfo = placeableHover.WouldTake(tool.toolPickupable);
+
+			if (placeInfo.type == PlacementType.Success)
+			{
+				interactionUI.ShowPickupable(placeInfo.message);
+				return;
+			}
+		}
+
+		//NOW CHECK IF HOVERING OVER PICKUPABLE
+		pickupableHover = sensor.hoverObject.GetComponent<Pickupable>();
+
+		//if is hovering over pickupable (and it will be picked up) and not holding anything
+		if (pickupableHover != null && tool.curTool == null)
+		{
+			PlaceInfo placeInfo = pickupableHover.CanPickup();
+			if (placeInfo.type == PlacementType.Success)
+			{
+				interactionUI.ShowPickupable(placeInfo.message);
+				return;
+			}
+		}
+
+		//NEITHER DONE, HIDE PICKUPABLE INFO
+		interactionUI.HidePickupable();
+	}
 	//Place current tool
-    private void Place()
+	private void Place()
 	{
 		OnPlace.Invoke();
 
-        Pickupable pickup = tool.toolPickupable;
-        
-		placeableHover.Take(pickup, sensor.hoverPoint);
-        tool.SetNull();
-	}
+		Pickupable pickup = tool.toolPickupable;
 
-    //Pickup an item
+		placeableHover.Take(pickup, sensor.hoverPoint);
+		tool.SetNull();
+	}
+	//Pickup the hover item
 	private void Pickup(Pickupable item)
 	{
 		OnPickup.Invoke();
@@ -112,19 +96,19 @@ public class PlayerPickup : MonoBehaviour
 
 		item.transform.localPosition = Vector3.zero;
 		item.transform.localRotation = Quaternion.identity;
-		
+
 		tool.SetFromPickupable(item);
-		
+
 		Rigidbody rb = item.GetComponent<Rigidbody>();
-		if(rb != null)
+		if (rb != null)
 		{
 			rb.isKinematic = true;
-            item.GetComponent<Collider>().isTrigger = true;
+			item.GetComponent<Collider>().isTrigger = true;
 		}
 
 		//Make sure the collider does not have collision
 		Collider col = item.GetComponent<Collider>();
-		if(col.isTrigger)
+		if (col.isTrigger)
 		{
 			colliderWasTrigger = true;
 		}
@@ -134,55 +118,54 @@ public class PlayerPickup : MonoBehaviour
 			col.isTrigger = true;
 		}
 	}
-    void OnPickupPressed()
+	//Listener for when player presses pickup button
+	private void OnPickupPressed()
 	{
 		//if player can place an item then try placing, if not,check if player can pick up an item
-		if(tool.curTool != null)
-        {
-             if(placeableHover != null)
-            {
-                if(canPlace())
-                {
+		if (tool.curTool != null)
+		{
+			if (placeableHover != null)
+			{
+				if (canPlace())
+				{
 					//reset the collider
-					if(!colliderWasTrigger)
+					if (!colliderWasTrigger)
 					{
 						Collider col = tool.curTool.gameObject.GetComponent<Collider>();
 						col.isTrigger = false;
 					}
-                    Place();
-                }	
-            }
-        }
-        else
-        {
-            if(pickupableHover == null) return;
-                Pickup(pickupableHover);
-        }
+					Place();
+				}
+			}
+		}
+		else
+		{
+			if (pickupableHover == null) return;
+			Pickup(pickupableHover);
+		}
 	}
-    
 	private bool canPlace()
 	{
-		if(tool.curTool == null || placeableHover == null ) return false;
+		if (tool.curTool == null || placeableHover == null) return false;
 
-			
+
 		PlaceInfo info = placeableHover.WouldTake(tool.toolPickupable);
-			
-		if(info.type == PlacementType.Success)
+
+		if (info.type == PlacementType.Success)
 		{
 			return true;
 		}
-		else if(info.type == PlacementType.Problem)
+		else if (info.type == PlacementType.Problem)
 		{
 			interactionUI.Problem(info.message);
 			return false;
 		}
 		return false;
 
-        
-       
+
+
 	}
-	
-    void OnDestroy()
+	private void OnDestroy()
 	{
 		//remove functions from delegates
 		input.OnPickupPressed -= OnPickupPressed;
