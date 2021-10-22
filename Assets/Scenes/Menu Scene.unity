@@ -1799,17 +1799,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'FREE Music: www.Bensound.com
-
-
-    Many free models from cgtrader.com
-
-
-    "Lowpoly
-    Glove (Rigged)" (https://skfb.ly/ooC7J) by Andrewociones is licensed under Creative
-    Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-
-'
+  m_Text: "Free Music: \nwww.bensound.com\n\nFree Sound Effects:\nwww.freesoundeffects.com\nwww.fesliyanstudios.com\n\nFree
+    Models:\nwww.cgtrader.com\nwww.sketchfab.com - \"Lowpoly Glove (Rigged)\" (https://skfb.ly/ooC7J)
+    by Andrewociones is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).\n\nFree
+    tutorials and ideas\nBrackeys: https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA\nSebastian
+    Lague\"\nhttps://www.youtube.com/c/SebastianLague"
 --- !u!222 &265314463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6110,7 +6104,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22730
+  m_Name: pb_Mesh192140
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

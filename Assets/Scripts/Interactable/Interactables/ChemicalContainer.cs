@@ -6,16 +6,29 @@ public class ChemicalContainer : Interactable
 
 	public override void Interact(Interactable other)
 	{
-		(other as TestTube).contents = contents;
+		TestTube testtube = other as TestTube;
+		if (testtube.contents == null)
+		{
+			testtube.contents = contents;
+		}
+		else
+		{
+			testtube.contents.mix(contents);
+		}
 	}
 	public override InteractionInfo WouldInteract(Interactable other)
 	{
-		if (other == null) return InteractionInfo.None;
-
-		Debug.Log("PASSED CHECK");
 		if (other.GetType().Name == "TestTube")
 		{
-			return InteractionInfo.Success("pour into test tube.");
+			TestTube testube = other as TestTube;
+			if (testube.contents == null)
+			{
+				return InteractionInfo.Success("pour into test tube.");
+			}
+			else
+			{
+				return InteractionInfo.Success("mix in test tube.");
+			}
 		}
 		else
 		{
