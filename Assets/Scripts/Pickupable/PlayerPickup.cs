@@ -20,9 +20,13 @@ public class PlayerPickup : MonoBehaviour
 	[SerializeField]
 	private Transform itemParent;
 
+	[SerializeField]
+	private LayerMask SetToLayer;
+
 	private Placeable placeableHover;
 	private Pickupable pickupableHover;
 	private bool colliderWasTrigger;
+	private LayerMask colliderPrevLayer;
 
 	private void Start()
 	{
@@ -81,10 +85,17 @@ public class PlayerPickup : MonoBehaviour
 	//Place current tool
 	private void Place()
 	{
-		OnPlace.Invoke();
+		//reset the collider
+		Collider col = tool.curTool.gameObject.GetComponent<Collider>();
+		if (!colliderWasTrigger)
+		{
+			col.isTrigger = false;
+		}
+		tool.curTool.gameObject.layer = colliderPrevLayer;
+		
+		if(OnPlace != null) OnPlace.Invoke();
 
 		Pickupable pickup = tool.toolPickupable;
-
 		placeableHover.Take(pickup, sensor.hoverPoint);
 		tool.SetNull();
 	}
@@ -92,22 +103,24 @@ public class PlayerPickup : MonoBehaviour
 	private void Pickup(Pickupable item)
 	{
 		if (OnPickup != null) OnPickup.Invoke();
+		
 		item.transform.SetParent(itemParent);
 
 		item.transform.localPosition = Vector3.zero;
 		item.transform.localRotation = Quaternion.identity;
-
+		
 		tool.SetFromPickupable(item);
 
 		Rigidbody rb = item.GetComponent<Rigidbody>();
 		if (rb != null)
 		{
 			rb.isKinematic = true;
-			item.GetComponent<Collider>().isTrigger = true;
 		}
 
-		//Make sure the collider does not have collision
+		//Make sure the collider does not have collision or with raycasts
 		Collider col = item.GetComponent<Collider>();
+		colliderPrevLayer = item.gameObject.layer;
+		item.gameObject.layer = SetToLayer;
 		if (col.isTrigger)
 		{
 			colliderWasTrigger = true;
@@ -128,12 +141,6 @@ public class PlayerPickup : MonoBehaviour
 			{
 				if (canPlace())
 				{
-					//reset the collider
-					if (!colliderWasTrigger)
-					{
-						Collider col = tool.curTool.gameObject.GetComponent<Collider>();
-						col.isTrigger = false;
-					}
 					Place();
 				}
 			}

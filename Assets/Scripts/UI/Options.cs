@@ -17,7 +17,7 @@ public class Options : MonoBehaviour
 		//Listen for change of value in sliders
 		ListenSlider(musicVolumeSlider, (value) => { GameSettings.current.musicVolume = value; });
 		ListenSlider(fxVolumeSlider, (value) => { GameSettings.current.fxVolume = value; });
-		ListenSlider(textSizeSlider, (value) => { GameSettings.current.textSize = value; });
+		ListenSlider(textSizeSlider, (value) => { GameSettings.current.textSize = 1 + (0.5f * value - 0.25f); });
 		ListenSlider(sensitivitySlider, (value) => { GameSettings.current.sensitivity = value; });
 
 		//Listen for change of value in checkboxes

@@ -36,7 +36,7 @@ public class GameSettings : MonoBehaviour
 	//private vars to hold value
 	private float _fxVolume;
 	private float _musicVolume;
-	private float _textSize;
+	private float _textSize = 1;
 	private float _sensitivity;
 	private bool _motionBlur;
 	private int _levelNo;

@@ -279,6 +279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5750b308d32ed489793e2c146579a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acceptableItems:
+  - TestTube
+  hoverName: test tube rack
   places:
   - {fileID: 1751254628661891376}
   - {fileID: 4734959932871437160}
@@ -288,8 +291,6 @@ MonoBehaviour:
   - {fileID: 8281476232959550515}
   - {fileID: 394173825031254212}
   itemParent: {fileID: 6028013465036508982}
-  acceptableItems:
-  - TestTube
 --- !u!114 &6065635331131599591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottom: {fileID: 2455161702695735629}
   canBePickUp: 1
-  cantPickUpReason: Reason rack can't be picked up.
+  cantPickUpReason: 
 --- !u!54 &2414397997885962622
 Rigidbody:
   m_ObjectHideFlags: 0

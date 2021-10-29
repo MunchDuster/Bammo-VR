@@ -981,7 +981,7 @@ MonoBehaviour:
   hoverPoint: {x: 0, y: 0, z: 0}
   mouseInteractLayerMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 1143
   mouseRayMaxDistance: 1.5
 --- !u!114 &8842024792935682618
 MonoBehaviour:
@@ -1057,6 +1057,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   itemParent: {fileID: 4074609106302412175}
+  SetToLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &1815715887268769760
 MonoBehaviour:
   m_ObjectHideFlags: 0
