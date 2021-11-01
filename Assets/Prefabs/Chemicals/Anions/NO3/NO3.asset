@@ -17,9 +17,11 @@ MonoBehaviour:
     reactant: {fileID: 11400000, guid: cbf1ff5186f5fd64da60cbd346330310, type: 2}
   - product: {fileID: 11400000, guid: 470bcf56dceca874b9f754b32bf8ea93, type: 2}
     reactant: {fileID: 11400000, guid: f4027e98b34388345b858fa3962d3c38, type: 2}
-  symbol: NO<sub>3</sub>
+  symbol: NO<sub>3</sub><sup>-</sup>
   contentsColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5019608}
   hasPrecipitate: 0
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0
   makesLitmusBlue: 0
+  name: NO3
+  charge: '-'

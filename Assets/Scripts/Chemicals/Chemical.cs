@@ -12,6 +12,7 @@ public class Chemical : ScriptableObject
 	}
 	public Chemical mix(Chemical other)
 	{
+		Debug.Log(name + " is reacting with " + other.name);
 		foreach (Reaction reaction in reactions)
 		{
 			if (reaction.reactant == other)
@@ -35,4 +36,8 @@ public class Chemical : ScriptableObject
 	public bool bubbles;
 
 	public bool makesLitmusBlue;
+
+	//Quick and dirty variables for the computer to check for correct answer
+	public string name;
+	public string charge;
 }

@@ -23,3 +23,5 @@ MonoBehaviour:
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0
   makesLitmusBlue: 0
+  name: Cl
+  charge: '-'

@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Criteria : MonoBehaviour
 {
-	public delegate void Event();
+
+	public delegate void Event(bool value);
 	public Event OnCriteriaMet;
+
 
 	private bool _hasBeenMet = false;
 	public bool hasBeenMet
@@ -15,7 +18,7 @@ public class Criteria : MonoBehaviour
 		set
 		{
 			_hasBeenMet = value;
-			OnCriteriaMet();
+			OnCriteriaMet(value);
 		}
 	}
 

@@ -718,7 +718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3941405096878011720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.566, y: 0.118, z: 1.7}
+  m_LocalPosition: {x: 1.41, y: 0.118, z: 1.7}
   m_LocalScale: {x: 3.2133071, y: 3.2133071, z: 3.2133071}
   m_Children: []
   m_Father: {fileID: 4405069367875814189}
@@ -1057,9 +1057,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   itemParent: {fileID: 4074609106302412175}
-  toolPickupLayer:
+  SetToLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
 --- !u!114 &1815715887268769760
 MonoBehaviour:
   m_ObjectHideFlags: 0

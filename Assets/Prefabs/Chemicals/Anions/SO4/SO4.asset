@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SO4
   m_EditorClassIdentifier: 
   reactions:
-  - product: {fileID: 11400000, guid: 5a260b0b919ad6d47b58ffdc47220ae8, type: 2}
+  - product: {fileID: 11400000, guid: 0e35e8d7112402840bad69ef46c2f817, type: 2}
     reactant: {fileID: 11400000, guid: f4027e98b34388345b858fa3962d3c38, type: 2}
-  - product: {fileID: 0}
-    reactant: {fileID: 0}
   symbol: SO<sub>4</sub><sup>2-</sup>
   contentsColor: {r: 0, g: 0, b: 0, a: 1}
   hasPrecipitate: 0
   precipitateColor: {r: 1, g: 1, b: 1, a: 0.015686275}
   bubbles: 0
   makesLitmusBlue: 0
+  name: SO4
+  charge: 2-

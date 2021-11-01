@@ -13,7 +13,13 @@ public class Gloves : Interactable
 	[SerializeField]
 	private Transform rightglove;
 
+	private Vector3 RHInitPosition, LHInitPosition;
 
+	private void Start()
+	{
+		RHInitPosition = rightglove.position;
+		LHInitPosition = leftglove.position;
+	}
 	public override void Interact(PlayerInteract player)
 	{
 		//////LEFT HAND///////
@@ -52,5 +58,18 @@ public class Gloves : Interactable
 	public override InteractionInfo WouldInteract(PlayerInteract player)
 	{
 		return InteractionInfo.Success("put on gloves");
+	}
+
+
+	public void PutBack()
+	{
+		leftglove.SetParent(transform);
+		rightglove.SetParent(transform);
+
+		rightglove.position = RHInitPosition;
+		leftglove.position = LHInitPosition;
+
+		rightglove.localRotation = Quaternion.identity;
+		leftglove.localRotation = Quaternion.identity;
 	}
 }

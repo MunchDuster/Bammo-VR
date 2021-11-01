@@ -9,7 +9,6 @@ public class Door : Interactable
 	private int indicatorMaterialIndex;
 
 	public delegate void OnPlayerPassEvent();
-	public OnPlayerPassEvent OnPlayerPassThrough;
 	public Criteria[] criterias;
 
 	public UnityEvent OnOpen;
@@ -71,13 +70,11 @@ public class Door : Interactable
 
 		PlayerJoin.OnPlayerJoined += OnPlayerJoined;
 
-		OnPlayerPassThrough += UpdateLight;
-
 		foreach (Criteria criteria in criterias)
 		{
 			criteria.OnCriteriaMet += UpdateLight;
 		}
-		UpdateLight();
+		UpdateLight(true);
 	}
 	private void OnPlayerJoined(GameObject newplayer)
 	{
@@ -99,9 +96,6 @@ public class Door : Interactable
 			lastDot = thisDot;
 			thisDot = Vector3.Dot(transform.forward, (player.position - player.position).normalized);
 		}
-
-		OnPlayerPassThrough();
-		UpdateLight();
 	}
 	private bool checkCriteria()
 	{
@@ -114,8 +108,14 @@ public class Door : Interactable
 		}
 		return true;
 	}
-	private void UpdateLight()
+	private void UpdateLight(bool met)
 	{
+		if (!met && !isLocked)
+		{
+			isLocked = true;
+			OnLock.Invoke();
+		}
+
 		bool criteriaMet = checkCriteria();
 		if (criteriaMet)
 		{

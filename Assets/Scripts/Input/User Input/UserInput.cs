@@ -7,7 +7,7 @@ public class UserInput : InputManager
 	public void OnMove(InputValue value)
 	{
 		move = value.Get<Vector2>();
-		if(OnMovePressed != null) OnMovePressed(move);
+		if (OnMovePressed != null) OnMovePressed(move);
 	}
 	public void OnLook(InputValue value)
 	{
@@ -16,15 +16,19 @@ public class UserInput : InputManager
 	public void OnSettings(InputValue value)
 	{
 		settingsPressed = value.isPressed;
-		if(OnSettingsPressed != null) OnSettingsPressed();
+		if (OnSettingsPressed != null) OnSettingsPressed();
 	}
 	public void OnInteract(InputValue value)
 	{
 		interactPressed = value.isPressed;
-		if(OnInteractPressed != null) OnInteractPressed();
+		if (OnInteractPressed != null) OnInteractPressed();
 	}
 	public void OnPickup(InputValue value)
 	{
-		if(OnPickupPressed != null) OnPickupPressed();
+		if (OnPickupPressed != null) OnPickupPressed();
+	}
+	public void OnZoom(InputValue value)
+	{
+		if (OnZoomPressed != null) OnZoomPressed();
 	}
 }

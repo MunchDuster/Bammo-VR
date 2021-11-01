@@ -21,7 +21,7 @@ public class PlayerPickup : MonoBehaviour
 	private Transform itemParent;
 
 	[SerializeField]
-	private LayerMask toolPickupLayer;
+	private LayerMask SetToLayer;
 
 	private Placeable placeableHover;
 	private Pickupable pickupableHover;
@@ -53,12 +53,12 @@ public class PlayerPickup : MonoBehaviour
 
 		//FIRST CHECK IF HOVERING OVER PLACEABLE
 		placeableHover = sensor.hoverObject.GetComponent<Placeable>();
-		if (tool.curTool != null && placeableHover != null)
+		if (tool.toolPickupable != null && placeableHover != null)
 		{
 			//hover object is placeable and player is holding item
 			PlaceInfo placeInfo = placeableHover.WouldTake(tool.toolPickupable);
 
-			if (placeInfo.type == PlacementType.Success)
+			if (placeInfo.type == PlaceInfo.Type.Success)
 			{
 				interactionUI.ShowPickupable(placeInfo.message);
 				return;
@@ -72,7 +72,7 @@ public class PlayerPickup : MonoBehaviour
 		if (pickupableHover != null && tool.curTool == null)
 		{
 			PlaceInfo placeInfo = pickupableHover.CanPickup();
-			if (placeInfo.type == PlacementType.Success)
+			if (placeInfo.type == PlaceInfo.Type.Success)
 			{
 				interactionUI.ShowPickupable(placeInfo.message);
 				return;
@@ -91,8 +91,6 @@ public class PlayerPickup : MonoBehaviour
 		{
 			col.isTrigger = false;
 		}
-
-		Debug.Log("Placing");
 		tool.curTool.gameObject.layer = colliderPrevLayer;
 
 		if (OnPlace != null) OnPlace.Invoke();
@@ -104,7 +102,6 @@ public class PlayerPickup : MonoBehaviour
 	//Pickup the hover item
 	private void Pickup(Pickupable item)
 	{
-		Debug.Log("Pickup");
 		if (OnPickup != null) OnPickup.Invoke();
 
 		item.transform.SetParent(itemParent);
@@ -118,15 +115,22 @@ public class PlayerPickup : MonoBehaviour
 		if (rb != null)
 		{
 			rb.isKinematic = true;
+			rb.AddForce(Random.onUnitSphere * 0.02f);
 		}
 
 		//Make sure the collider does not have collision or with raycasts
 		Collider col = item.GetComponent<Collider>();
 		colliderPrevLayer = item.gameObject.layer;
-		item.gameObject.layer = (int)Mathf.Log(toolPickupLayer.value, 2);
-
-		colliderWasTrigger = col.isTrigger;
-		col.isTrigger = true;
+		item.gameObject.layer = SetToLayer;
+		if (col.isTrigger)
+		{
+			colliderWasTrigger = true;
+		}
+		else
+		{
+			colliderWasTrigger = false;
+			col.isTrigger = true;
+		}
 	}
 	//Listener for when player presses pickup button
 	private void OnPickupPressed()
@@ -155,11 +159,11 @@ public class PlayerPickup : MonoBehaviour
 
 		PlaceInfo info = placeableHover.WouldTake(tool.toolPickupable);
 
-		if (info.type == PlacementType.Success)
+		if (info.type == PlaceInfo.Type.Success)
 		{
 			return true;
 		}
-		else if (info.type == PlacementType.Problem)
+		else if (info.type == PlaceInfo.Type.Problem)
 		{
 			interactionUI.Problem(info.message);
 			return false;

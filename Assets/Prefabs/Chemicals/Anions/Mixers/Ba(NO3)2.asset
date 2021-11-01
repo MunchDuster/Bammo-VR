@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ba(NO3)2
   m_EditorClassIdentifier: 
   reactions:
-  - product: {fileID: 11400000, guid: 5a260b0b919ad6d47b58ffdc47220ae8, type: 2}
+  - product: {fileID: 0}
     reactant: {fileID: 11400000, guid: ad8da4f91dfb72a41951ab9fdfb2b53d, type: 2}
   symbol: Ba(NO<sub>3</sub>)<sub>2</sub>
   contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
@@ -21,3 +21,5 @@ MonoBehaviour:
   precipitateColor: {r: 0, g: 0, b: 0, a: 0}
   bubbles: 0
   makesLitmusBlue: 0
+  name: Ba(NO3)2
+  charge: 

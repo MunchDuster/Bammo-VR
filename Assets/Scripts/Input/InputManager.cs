@@ -20,6 +20,7 @@ public abstract class InputManager : MonoBehaviour
 	public ButtonPressed OnInteractPressed;
 	public ButtonPressed OnPickupPressed;
 	public ButtonPressed OnSettingsPressed;
+	public ButtonPressed OnZoomPressed;
 
 	public delegate void Vector2Pressed(Vector2 value);
 	public Vector2Pressed OnMovePressed;

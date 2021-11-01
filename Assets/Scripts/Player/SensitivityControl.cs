@@ -17,7 +17,7 @@ public class SensitivityControl : MonoBehaviour
 	private void OnDestroy()
 	{
 		//remove the listener
-		GameSettings.current.OnSensitivityChanged += OnSensitivityChanged;
+		GameSettings.current.OnSensitivityChanged -= OnSensitivityChanged;
 	}
 	// Listens for change in sensitivity in settings
 	void OnSensitivityChanged(float value)

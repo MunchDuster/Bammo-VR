@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class PlayerUI : MonoBehaviour
 	public float padding = 20;
 
 	[Header("Texts")]
-	public Text itemName;
-	public Text infoText;
-	public Text interactText;
-	public Text pickupText;
-	public Text problemText;
+	public TextMeshProUGUI itemName;
+	public TextMeshProUGUI infoText;
+	public TextMeshProUGUI interactText;
+	public TextMeshProUGUI pickupText;
+	public TextMeshProUGUI problemText;
 
 	[Header("Parents")]
 	public GameObject infoParent;
@@ -39,32 +40,32 @@ public class PlayerUI : MonoBehaviour
 		itemName.text = interactable.itemName;
 		infoText.text = interactable.hoverInfo;
 	}
-	public void HideInfo()
-	{
-		infoParent.SetActive(false);
-	}
 	public void ShowPickupable(string message)
 	{
 		pickupParent.SetActive(true);
 		pickupText.text = pickupKey + " to " + message;
-	}
-	public void HidePickupable()
-	{
-		pickupParent.SetActive(false);
+		FitText(pickupParent, pickupText);
 	}
 	public void ShowInteraction(string message)
 	{
 		interactParent.SetActive(true);
 		interactText.text = interactKey + " to " + message;
 
-		RectTransform rect = interactParent.GetComponent<RectTransform>();
-		rect.sizeDelta = new Vector2(interactText.preferredWidth + padding, rect.sizeDelta.y);
+		FitText(interactParent, interactText);
+	}
+
+	public void HidePickupable()
+	{
+		pickupParent.SetActive(false);
+	}
+	public void HideInfo()
+	{
+		infoParent.SetActive(false);
 	}
 	public void HideInteraction()
 	{
 		interactParent.SetActive(false);
 	}
-
 
 	public void Problem(string problem)
 	{
@@ -72,6 +73,12 @@ public class PlayerUI : MonoBehaviour
 		problemParent.SetActive(true);
 
 		StartCoroutine(HideAfterXSeconds(problemParent, 3));
+	}
+
+	private void FitText(GameObject parent, TextMeshProUGUI text)
+	{
+		RectTransform rect = parent.GetComponent<RectTransform>();
+		rect.sizeDelta = new Vector2(text.preferredWidth + padding, rect.sizeDelta.y);
 	}
 	private IEnumerator HideAfterXSeconds(GameObject obj, float secs)
 	{

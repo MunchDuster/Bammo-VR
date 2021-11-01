@@ -7,7 +7,7 @@ public class EndScreen : MonoBehaviour
 	private void Awake()
 	{
 		{
-			float time = Time.time;
+			float time = Time.timeSinceLevelLoad;
 
 			text.text = "Time taken: " + (time) + "s.";
 

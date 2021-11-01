@@ -1,0 +1,608 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6921642481251400607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6921642481251400606}
+  m_Layer: 0
+  m_Name: Offset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6921642481251400606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642481251400607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6040432487285315634}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6921642481321702630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6921642481321702629}
+  m_Layer: 0
+  m_Name: Head Offset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6921642481321702629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642481321702630}
+  m_LocalRotation: {x: -0.0000007376074, y: -0.77269155, z: -0.6347817, w: 0.0000010356306}
+  m_LocalPosition: {x: 0, y: 0.52, z: 0.453}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7459126840999052091}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -78.808, y: -180, z: 0}
+--- !u!1 &6921642481417637742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6921642481417637741}
+  m_Layer: 0
+  m_Name: Glasses Place
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6921642481417637741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642481417637742}
+  m_LocalRotation: {x: -0.46378362, y: -0.53608584, z: -0.48460984, w: 0.5125135}
+  m_LocalPosition: {x: 0.087999985, y: 0.534, z: 0.026134491}
+  m_LocalScale: {x: 1.9358667, y: 1.92942, z: 1.4555472}
+  m_Children: []
+  m_Father: {fileID: 6921642482482188114}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -84.254, y: -92.843, z: 0.296}
+--- !u!1 &6921642481871942553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6921642481871942552}
+  m_Layer: 0
+  m_Name: Gloves place
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6921642481871942552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642481871942553}
+  m_LocalRotation: {x: -0.67011446, y: -0.22571373, z: -0.22571373, w: 0.67011446}
+  m_LocalPosition: {x: 0.21413326, y: 0.5075, z: 0.3845342}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6921642482482188114}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: -37.23, z: 0}
+--- !u!1 &6921642482067527432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6921642482067527431}
+  m_Layer: 0
+  m_Name: Offset (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6921642482067527431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642482067527432}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.19669984, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7839566662450853612}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6921642482482188115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6921642482482188114}
+  - component: {fileID: 6921642482482188143}
+  - component: {fileID: 6921642482482188112}
+  - component: {fileID: 6921642482482188113}
+  - component: {fileID: 6921642482482188141}
+  - component: {fileID: 6921642482482188142}
+  m_Layer: 0
+  m_Name: safety gear place
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &6921642482482188114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642482482188115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0.25, z: 8.623}
+  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
+  m_Children:
+  - {fileID: 6921642481417637741}
+  - {fileID: 6921642481871942552}
+  - {fileID: 7459126840999052091}
+  - {fileID: 114641182989068458}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6921642482482188143
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642482482188115}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6921642482482188112
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642482482188115}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6921642482482188113
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642482482188115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6921642482482188141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642482482188115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11ef4a079e2fab47ba43d4c9ed4c92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Safety equipment place
+  hoverInfo: Put back safety gear when finished task
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6921642482839011217}
+        m_TargetAssemblyTypeName: Gloves, Assembly-CSharp
+        m_MethodName: PutBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 782668802100949520}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: set_layer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7840754839023049089}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: set_layer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  criteriaMetWhenNotWearingAnything: {fileID: 6921642482482188142}
+  accessories:
+  - item: {fileID: 7459126840999052091}
+    place: {fileID: 6921642481417637741}
+    wearCriteria: {fileID: 7840754839023049118}
+  - item: {fileID: 114641182989068458}
+    place: {fileID: 6921642481871942552}
+    wearCriteria: {fileID: 1312158178167949818}
+--- !u!114 &6921642482482188142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921642482482188115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf073dc62ac034abcc3f2fd4ee692a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meetRequirement: put back safety gear
+--- !u!114 &6921642482839011217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782668802100949520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bf5f117fe4238419dc3b3b6fe31f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Gloves
+  hoverInfo: Wear these to protect you hands
+  lefthandOffset: {fileID: 6921642481251400606}
+  righthandOffset: {fileID: 6921642482067527431}
+  criteriaMetWhenWearing: {fileID: 1312158178167949818}
+  leftglove: {fileID: 6040432487285315634}
+  rightglove: {fileID: 7839566662450853612}
+--- !u!65 &6921642481078101227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840754839023049089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1387862, y: 0.10699425, z: 0.038809095}
+  m_Center: {x: -0.000000115699315, y: -0.03229691, z: -0.0055953977}
+--- !u!114 &6921642481078101230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840754839023049089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05804c2e3cafc7b459f1044560a1c69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Safety Goggles
+  hoverInfo: Must be warn in lab.
+  headOffset: {fileID: 6921642481321702629}
+  criteriaMetWhenWearing: {fileID: 7840754839023049118}
+--- !u!114 &7840754839023049118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840754839023049089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf073dc62ac034abcc3f2fd4ee692a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meetRequirement: Must be wearing safety goggles
+--- !u!1001 &1863686867770006629
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6921642482482188114}
+    m_Modifications:
+    - target: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: onMet.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: onUnMet.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: onMet.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: onMet.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6921642482482188115}
+    - target: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: onUnMet.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: onMet.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: onUnMet.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369582968300646005, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_Name
+      value: Gloves
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.21413326
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5075
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3845342
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.67011446
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.67011446
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.22571373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.22571373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -37.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373289197714187063, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: criteriaMetWhenWearing
+      value: 
+      objectReference: {fileID: 1312158178167949818}
+    - target: {fileID: 4602529553709361047, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a96dcd1c6a96c4c45b853d2aa0fd2d7d, type: 2}
+    - target: {fileID: 7714855461607773882, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a96dcd1c6a96c4c45b853d2aa0fd2d7d, type: 2}
+    m_RemovedComponents:
+    - {fileID: 2373289197714187063, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+--- !u!1 &782668802100949520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1369582968300646005, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+  m_PrefabInstance: {fileID: 1863686867770006629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &114641182989068458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1750331082593301711, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+  m_PrefabInstance: {fileID: 1863686867770006629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1312158178167949818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 858109167564412319, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+  m_PrefabInstance: {fileID: 1863686867770006629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782668802100949520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf073dc62ac034abcc3f2fd4ee692a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6040432487285315634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5336422523886306391, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+  m_PrefabInstance: {fileID: 1863686867770006629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7839566662450853612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8437099190116248201, guid: 7a4d4b0469f9aa64e8f2f69b5cd17c5f, type: 3}
+  m_PrefabInstance: {fileID: 1863686867770006629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6921642481078101200
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6921642482482188114}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9358667
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.92942
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4555472
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.087999985
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.534
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.026134491
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5125135
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.46378362
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.53608584
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.48460984
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -84.254
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -92.843
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.296
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 98494b710aa66a840b9fde6217662687, type: 2}
+    - target: {fileID: 919132149155446097, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+      propertyPath: m_Name
+      value: Safety Goggles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+--- !u!1 &7840754839023049089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+  m_PrefabInstance: {fileID: 6921642481078101200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7459126840999052091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 805a949492e72e44aa3305d83b5fc647, type: 3}
+  m_PrefabInstance: {fileID: 6921642481078101200}
+  m_PrefabAsset: {fileID: 0}
