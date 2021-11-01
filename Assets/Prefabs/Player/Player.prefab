@@ -1057,7 +1057,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   itemParent: {fileID: 4074609106302412175}
-  SetToLayer:
+  toolPickupLayer:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &1815715887268769760

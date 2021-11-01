@@ -6,6 +6,8 @@ public class PlaceInFixed : Placeable
 	{
 		public Pickupable item;
 		public Transform place;
+		[HideInInspector]
+		public bool wasTrigger;
 	}
 
 	public string[] acceptableItems;
@@ -61,6 +63,10 @@ public class PlaceInFixed : Placeable
 
 		emptySlot.item = item;
 
+		Collider collider = item.gameObject.GetComponent<Collider>();
+		emptySlot.wasTrigger = collider.isTrigger;
+		collider.isTrigger = true;
+
 		item.transform.position = emptySlot.place.position;
 		item.transform.localRotation = Quaternion.identity;
 	}
@@ -68,8 +74,13 @@ public class PlaceInFixed : Placeable
 	{
 		ItemPlace currentSlot = GetItemSlot(item);
 		currentSlot.item = null;
-	}
 
+		if (!currentSlot.wasTrigger)
+		{
+			Collider collider = item.gameObject.GetComponent<Collider>();
+			collider.isTrigger = true;
+		}
+	}
 
 	private void Start()
 	{

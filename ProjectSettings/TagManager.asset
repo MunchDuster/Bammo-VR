@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TestTube
   - Tray
+  - ChemicalContainer
   layers:
   - Default
   - TransparentFX
