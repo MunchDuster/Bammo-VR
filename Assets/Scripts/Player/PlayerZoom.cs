@@ -7,6 +7,8 @@ public class PlayerZoom : MonoBehaviour
     private Camera cam;
 	[SerializeField]
 	private float zoomFOV = 10;
+	[SerializeField]
+	private float sensitivityMultiplier = 0.5f;
 
 	private bool isZooming;
 	private float oldFOV;
@@ -36,11 +38,13 @@ public class PlayerZoom : MonoBehaviour
             //Zoom
 			oldFOV = cam.fieldOfView;
 			cam.fieldOfView = zoomFOV;
+			GameSettings.current.sensitivity *= sensitivityMultiplier;
 		}
         else
         {
             //Unzoom
 			cam.fieldOfView = oldFOV;
+			GameSettings.current.sensitivity /= sensitivityMultiplier;
         }
 	}
 }

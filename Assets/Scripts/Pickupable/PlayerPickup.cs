@@ -115,7 +115,6 @@ public class PlayerPickup : MonoBehaviour
 		if (rb != null)
 		{
 			rb.isKinematic = true;
-			rb.AddForce(Random.onUnitSphere * 0.02f);
 		}
 
 		//Make sure the collider does not have collision or with raycasts

@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e212ca69e73e2468798cf8afd79608, type: 3}
   m_Name: Cu + NH3
   m_EditorClassIdentifier: 
-  reactions: []
+  reactions:
+  - product: {fileID: 11400000, guid: 00f6c0d5d12729f4b98ef5e41c125b39, type: 2}
+    reactant: {fileID: 11400000, guid: 325848ad8e4bc3a4b89f73e339f11c59, type: 2}
   symbol: 
   contentsColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   hasPrecipitate: 1
   precipitateColor: {r: 0, g: 0.15721345, b: 1, a: 1}
   bubbles: 0
   makesLitmusBlue: 0
+  name: 
+  charge: 

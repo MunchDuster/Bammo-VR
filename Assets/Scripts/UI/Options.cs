@@ -7,7 +7,7 @@ public class Options : MonoBehaviour
 	//Sliders to control game settings
 	public Slider musicVolumeSlider;
 	public Slider fxVolumeSlider;
-	public Slider textSizeSlider;
+	public Slider brightnessSlider;
 	public Slider sensitivitySlider;
 	public Toggle motionBlurToggle;
 
@@ -17,8 +17,8 @@ public class Options : MonoBehaviour
 		//Listen for change of value in sliders
 		ListenSlider(musicVolumeSlider, (value) => { GameSettings.current.musicVolume = value; });
 		ListenSlider(fxVolumeSlider, (value) => { GameSettings.current.fxVolume = value; });
-		ListenSlider(textSizeSlider, (value) => { GameSettings.current.textSize = 1 + (0.5f * value - 0.25f); });
-		ListenSlider(sensitivitySlider, (value) => { GameSettings.current.sensitivity = value; });
+		ListenSlider(brightnessSlider, (value) => { GameSettings.current.brightness = value * 1.5f - 0.9f; });
+		ListenSlider(sensitivitySlider, (value) => { GameSettings.current.sensitivity = value * 2; });
 
 		//Listen for change of value in checkboxes
 		ListenToggle(motionBlurToggle, (value) => { GameSettings.current.motionBlur = value; });

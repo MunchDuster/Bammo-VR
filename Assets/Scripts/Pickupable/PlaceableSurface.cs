@@ -29,6 +29,7 @@ public class PlaceableSurface : Placeable
 		if (rb != null)
 		{
 			rb.isKinematic = false;
+			rb.AddForce(Random.onUnitSphere * 0.1f);
 			item.GetComponent<Collider>().isTrigger = false;
 		}
 

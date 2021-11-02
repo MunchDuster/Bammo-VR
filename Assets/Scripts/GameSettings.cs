@@ -27,7 +27,7 @@ public class GameSettings : MonoBehaviour
 
 	public OnFloatChanged OnMusicVolumeChanged;
 	public OnFloatChanged OnFXVolumeChanged;
-	public OnFloatChanged OnTextSizeChanged;
+	public OnFloatChanged OnBrightnessChanged;
 	public OnFloatChanged OnSensitivityChanged;
 	public OnIntChanged OnLevelNoChanged;
 	public delegate void OnBoolChanged(bool value);
@@ -36,7 +36,7 @@ public class GameSettings : MonoBehaviour
 	//private vars to hold value
 	private float _fxVolume;
 	private float _musicVolume;
-	private float _textSize = 1;
+	private float _brightness;
 	private float _sensitivity;
 	private bool _motionBlur;
 	private int _levelNo;
@@ -66,16 +66,16 @@ public class GameSettings : MonoBehaviour
 			return _musicVolume;
 		}
 	}
-	public float textSize
+	public float brightness
 	{
 		set
 		{
-			_textSize = value;
-			if (OnTextSizeChanged != null) OnTextSizeChanged(value);
+			_brightness = value;
+			if (OnBrightnessChanged != null) OnBrightnessChanged(value);
 		}
 		get
 		{
-			return _textSize;
+			return _brightness;
 		}
 	}
 	public float sensitivity

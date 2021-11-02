@@ -2432,6 +2432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings UI
       objectReference: {fileID: 0}
+    - target: {fileID: 8901153474074729420, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8901153474074729423, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2515,6 +2519,22 @@ PrefabInstance:
     - target: {fileID: 8901153474074729423, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901153474394497911, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901153474664241523, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901153475304066904, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901153475588644425, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df500b2fc345d5a47b92ff8bcf5aab5b, type: 3}
